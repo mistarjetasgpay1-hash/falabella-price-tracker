@@ -2,8 +2,10 @@ from io import BytesIO
 import json
 import os
 import re
+import shutil
 import time
 from pathlib import Path
+import requests
 from curl_cffi import requests as cffi_requests
 from PIL import Image
 
@@ -18,39 +20,28 @@ if not TELEGRAM_TOKEN or not CHAT_ID:
 
 ARCHIVO_ESTADO = Path("notificados_falabella.json")
 UMBRAL_DESCUENTO = 45.0
-PAGINAS_A_ESCANEAR = 5
+PAGINAS_A_ESCANEAR = 4
 MAX_ALERTAS_POR_EJECUCION = 30
 
-# Categorías de Falabella Perú
 CATEGORIAS = [
     {
         "nombre": "Tecnología",
-        "cat_id": "cat760706",
-        "name_slug": "Tecnologia",
         "url": "https://www.falabella.com.pe/falabella-pe/category/cat760706/Tecnologia",
     },
     {
         "nombre": "Celulares",
-        "cat_id": "cat70057",
-        "name_slug": "Celulares-y-Telefonos",
         "url": "https://www.falabella.com.pe/falabella-pe/category/cat70057/Celulares-y-Telefonos",
     },
     {
         "nombre": "Electrohogar",
-        "cat_id": "cat40512",
-        "name_slug": "Electrohogar",
         "url": "https://www.falabella.com.pe/falabella-pe/category/cat40512/Electrohogar",
     },
     {
         "nombre": "Cómputo y Laptops",
-        "cat_id": "cat40496",
-        "name_slug": "Computo",
         "url": "https://www.falabella.com.pe/falabella-pe/category/cat40496/Computo",
     },
     {
         "nombre": "Televisores",
-        "cat_id": "cat40554",
-        "name_slug": "Televisores",
         "url": "https://www.falabella.com.pe/falabella-pe/category/cat40554/Televisores",
     },
 ]
@@ -73,7 +64,7 @@ def guardar_notificados(notificados: set) -> None:
 
 
 def construir_urls_imagen(prod: dict) -> list[str]:
-    """Obtiene todas las URLs posibles de la imagen del producto en el CDN de Falabella."""
+    """Construye todas las variantes válidas del CDN de imágenes de Falabella Perú."""
     urls = []
     media_urls = prod.get("mediaUrls") or []
     if isinstance(media_urls, str):
@@ -87,16 +78,21 @@ def construir_urls_imagen(prod: dict) -> list[str]:
             if limpia.startswith("http"):
                 urls.append(limpia)
             elif limpia.startswith("falabellaPE/"):
+                urls.append(f"https://media.falabella.com.pe/{limpia}/w=800,h=800,f=jpeg")
                 urls.append(f"https://media.falabella.com.pe/{limpia}/public")
             else:
+                urls.append(f"https://media.falabella.com.pe/falabellaPE/{limpia}/w=800,h=800,f=jpeg")
                 urls.append(f"https://media.falabella.com.pe/falabellaPE/{limpia}/public")
 
     for key in ("skuId", "productId"):
         ident = str(prod.get(key) or "").strip()
         if ident:
+            urls.append(f"https://media.falabella.com.pe/falabellaPE/{ident}_1/w=800,h=800,f=jpeg")
             urls.append(f"https://media.falabella.com.pe/falabellaPE/{ident}_1/public")
             urls.append(f"https://media.falabella.com.pe/falabellaPE/{ident}_01/public")
-            urls.append(f"https://media.falabella.com.pe/falabellaPE/{ident}/public")
+            urls.append(
+                f"https://falabella.scene7.com/is/image/FalabellaPE/{ident}_1?wid=800&hei=800&qlt=85&fmt=jpeg"
+            )
 
     vistas = set()
     resultado = []
@@ -108,19 +104,16 @@ def construir_urls_imagen(prod: dict) -> list[str]:
 
 
 def descargar_y_convertir_jpeg(
-    session: cffi_requests.Session, urls_imagen: list[str]
+    cffi_sess: cffi_requests.Session, urls_imagen: list[str]
 ) -> bytes | None:
-    """
-    Descarga la imagen usando la sesión Chrome (curl_cffi) y la convierte en memoria
-    a un archivo JPEG RGB estándar con Pillow para que Telegram nunca la rechace.
-    """
+    """Descarga la imagen del CDN y la convierte a JPEG RGB real en memoria."""
     headers_img = {
         "Accept": "image/jpeg,image/png,image/webp,image/*,*/*;q=0.8",
         "Referer": "https://www.falabella.com.pe/",
     }
     for url in urls_imagen:
         try:
-            resp = session.get(url, headers=headers_img, timeout=10)
+            resp = cffi_sess.get(url, headers=headers_img, timeout=10)
             if resp.status_code == 200 and resp.content and len(resp.content) > 800:
                 with Image.open(BytesIO(resp.content)) as img:
                     img_rgb = img.convert("RGB")
@@ -133,37 +126,25 @@ def descargar_y_convertir_jpeg(
 
 
 def enviar_alerta_telegram(
-    session: cffi_requests.Session, mensaje: str, urls_imagen: list[str]
+    req_sess: requests.Session,
+    cffi_sess: cffi_requests.Session,
+    mensaje: str,
+    urls_imagen: list[str],
 ) -> bool:
     base_url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}"
 
-    # 1. Subir imagen convertida a JPEG real
-    img_bytes = descargar_y_convertir_jpeg(session, urls_imagen)
+    # 1. Descargar y convertir imagen a JPEG estándar para subirla a Telegram
+    img_bytes = descargar_y_convertir_jpeg(cffi_sess, urls_imagen)
     if img_bytes:
         for _ in range(2):
             try:
-                from curl_cffi import CurlMime
-                mp = CurlMime()
-                mp.addpart(
-                    name="chat_id",
-                    data=CHAT_ID.encode("utf-8"),
-                )
-                mp.addpart(
-                    name="caption",
-                    data=mensaje[:1024].encode("utf-8"),
-                )
-                mp.addpart(
-                    name="photo",
-                    content_type="image/jpeg",
-                    filename="oferta.jpg",
-                    data=img_bytes,
-                )
-                resp = session.post(
+                resp = req_sess.post(
                     f"{base_url}/sendPhoto",
-                    multipart=mp,
+                    data={"chat_id": CHAT_ID, "caption": mensaje[:1024]},
+                    files={"photo": ("oferta.jpg", img_bytes, "image/jpeg")},
                     timeout=15,
                 )
-                if resp.status_code == 200:
+                if resp.ok:
                     return True
                 if resp.status_code == 429:
                     espera = min(
@@ -171,13 +152,13 @@ def enviar_alerta_telegram(
                     )
                     time.sleep(espera + 1)
                     continue
-                print(f"[WARN] Error en sendPhoto ({resp.status_code}): {resp.text}")
+                print(f"[WARN] sendPhoto devolvió {resp.status_code}: {resp.text}")
                 break
-            except Exception as e:
-                print(f"[WARN] Excepción enviando foto: {e}")
+            except requests.RequestException as e:
+                print(f"[WARN] Error de red en sendPhoto: {e}")
                 break
 
-    # 2. Respaldo en texto plano solo si el producto no tiene imagen válida
+    # 2. Respaldo en texto plano solo si el producto no tiene foto
     payload_texto = {
         "chat_id": CHAT_ID,
         "text": mensaje,
@@ -185,10 +166,10 @@ def enviar_alerta_telegram(
     }
     for _ in range(2):
         try:
-            resp = session.post(
+            resp = req_sess.post(
                 f"{base_url}/sendMessage", json=payload_texto, timeout=10
             )
-            if resp.status_code == 200:
+            if resp.ok:
                 return True
             if resp.status_code == 429:
                 espera = min(
@@ -197,13 +178,12 @@ def enviar_alerta_telegram(
                 time.sleep(espera + 1)
                 continue
             return False
-        except Exception:
+        except requests.RequestException:
             return False
     return False
 
 
 def buscar_productos_recursivo(nodo) -> list:
-    """Extrae la lista de productos de cualquier estructura JSON de Falabella."""
     if isinstance(nodo, list):
         productos_validos = [
             item
@@ -231,98 +211,151 @@ def buscar_productos_recursivo(nodo) -> list:
     return []
 
 
-def obtener_productos_pagina(
-    session: cffi_requests.Session, cat: dict, pagina: int
-) -> list:
-    """
-    Obtiene los productos usando curl_cffi (huella Chrome real) probando primero
-    la API JSON de Falabella y luego el HTML (__NEXT_DATA__) sin parámetros que vacíen la respuesta.
-    """
-    api_url = "https://www.falabella.com.pe/s/browse/v1/listing/pe"
-    params_api = {
-        "categoryId": cat["cat_id"],
-        "categoryName": cat["name_slug"],
-        "page": str(pagina),
-    }
-    headers_api = {
-        "Accept": "application/json, text/plain, */*",
-        "Referer": cat["url"],
-    }
+def extraer_productos_de_html(html_texto: str) -> list:
+    if not html_texto:
+        return []
+    match = re.search(
+        r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>',
+        html_texto,
+        re.DOTALL,
+    )
+    if match:
+        try:
+            next_data = json.loads(match.group(1))
+            return buscar_productos_recursivo(next_data)
+        except json.JSONDecodeError:
+            pass
+    return []
 
-    # 1. Intento por API interna de listado
-    try:
-        resp = session.get(api_url, params=params_api, headers=headers_api, timeout=15)
-        if resp.status_code == 200:
-            datos = resp.json()
-            productos = buscar_productos_recursivo(datos)
-            if productos:
-                return productos
-        else:
-            print(f"[DEBUG] API {cat['nombre']} pág {pagina} devolvió HTTP {resp.status_code}")
-    except Exception as e:
-        print(f"[DEBUG] Excepción API {cat['nombre']} pág {pagina}: {e}")
 
-    # 2. Respaldo por HTML de categoría (__NEXT_DATA__)
-    try:
-        resp_html = session.get(
-            cat["url"],
-            params={"page": str(pagina)},
-            headers={"Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},
-            timeout=15,
+class NavegadorRespaldo:
+    """Abre Google Chrome real en caso de que Akamai devuelva HTTP 403."""
+
+    def __init__(self) -> None:
+        self.page = None
+
+    def iniciar(self):
+        if self.page is not None:
+            return self.page
+        from DrissionPage import ChromiumPage, ChromiumOptions
+
+        co = ChromiumOptions().auto_port()
+        ruta_chrome = (
+            shutil.which("google-chrome")
+            or shutil.which("google-chrome-stable")
+            or shutil.which("chromium-browser")
+            or shutil.which("chromium")
         )
-        if resp_html.status_code == 200:
-            match = re.search(
-                r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>',
-                resp_html.text,
-                re.DOTALL,
-            )
-            if match:
-                next_data = json.loads(match.group(1))
-                productos = buscar_productos_recursivo(next_data)
-                if productos:
-                    return productos
-            else:
-                print(f"[DEBUG] HTML {cat['nombre']} pág {pagina} no contiene __NEXT_DATA__")
-        else:
-            print(f"[DEBUG] HTML {cat['nombre']} pág {pagina} devolvió HTTP {resp_html.status_code}")
-    except Exception as e:
-        print(f"[WARN] Error HTML {cat['nombre']} (pág {pagina}): {e}")
+        if ruta_chrome:
+            co.set_browser_path(ruta_chrome)
+        co.set_argument("--no-sandbox")
+        co.set_argument("--disable-dev-shm-usage")
+        co.set_argument("--disable-gpu")
+        co.set_argument("--disable-blink-features=AutomationControlled")
+        co.set_argument("--window-size=1366,768")
+        co.set_argument("--lang=es-PE")
+
+        self.page = ChromiumPage(co)
+        return self.page
+
+    def obtener_productos(self, url_completa: str) -> list:
+        try:
+            page = self.iniciar()
+            page.get(url_completa, timeout=20)
+
+            # Esperar hasta 6 segundos a que cargue __NEXT_DATA__
+            for _ in range(12):
+                js_data = page.run_js(
+                    "return window.__NEXT_DATA__ ? JSON.stringify(window.__NEXT_DATA__) : '';"
+                )
+                if js_data:
+                    datos = json.loads(js_data)
+                    prods = buscar_productos_recursivo(datos)
+                    if prods:
+                        return prods
+                html_actual = page.html
+                prods = extraer_productos_de_html(html_actual)
+                if prods:
+                    return prods
+                time.sleep(0.5)
+        except Exception as e:
+            print(f"[WARN] Error en Chrome de respaldo: {e}")
+        return []
+
+    def cerrar(self) -> None:
+        if self.page is not None:
+            try:
+                self.page.quit()
+            except Exception:
+                pass
+            self.page = None
+
+
+def obtener_productos_pagina(
+    req_sess: requests.Session,
+    cffi_sess: cffi_requests.Session,
+    navegador: NavegadorRespaldo,
+    cat: dict,
+    pagina: int,
+) -> list:
+    url_con_orden = f"{cat['url']}?page={pagina}&sortBy=derived.price.search.discount,desc"
+    url_simple = f"{cat['url']}?page={pagina}"
+
+    # Nivel 1: Petición directa con requests (sin tocar rutas 404 que bloquean la sesión)
+    for url_prueba in (url_con_orden, url_simple):
+        try:
+            resp = req_sess.get(url_prueba, timeout=12)
+            if resp.status_code == 200:
+                prods = extraer_productos_de_html(resp.text)
+                if prods:
+                    return prods
+        except requests.RequestException:
+            pass
+
+    # Nivel 2: Petición con curl_cffi (huella TLS de navegador sin sobrescribir cabeceras)
+    for url_prueba in (url_con_orden, url_simple):
+        try:
+            resp_cffi = cffi_sess.get(url_prueba, timeout=12)
+            if resp_cffi.status_code == 200:
+                prods = extraer_productos_de_html(resp_cffi.text)
+                if prods:
+                    return prods
+        except Exception:
+            pass
+
+    # Nivel 3: Respaldo con Google Chrome real (salta el bloqueo HTTP 403 de Akamai)
+    for url_prueba in (url_con_orden, url_simple):
+        prods = navegador.obtener_productos(url_prueba)
+        if prods:
+            return prods
 
     return []
 
 
 def es_vendedor_oficial(prod: dict) -> bool:
     """
-    Filtra estrictamente productos vendidos por Falabella Oficial:
-    1. En Falabella Perú, todos los productos de terceros (Marketplace / Seller Center)
-       tienen un productId o skuId de 9 dígitos que empieza con '1' (ej. 11xxxxxxx, 12xxxxxxx).
-       Los productos propios de Falabella tienen IDs de 7 u 8 dígitos.
-    2. Verifica cualquier campo de vendedor (sellerId, sellerName, variants) para descartar terceros.
+    Verifica estrictamente que el producto sea vendido por Falabella Oficial:
+    1. Descarta cualquier producto con flag de Marketplace o ID de 9 dígitos que empiece con '1' (3P Seller Center).
+    2. Revisa todos los campos posibles de vendedor ('sellerName', 'sellerId', 'offeredBy', 'seller').
     """
+    if prod.get("isMarketplace") is True or prod.get("marketplace") is True:
+        return False
+
     for key in ("productId", "skuId"):
         val = str(prod.get(key) or "").strip()
         if val.isdigit() and len(val) >= 9 and val.startswith("1"):
             return False
 
-    posibles_vendedores = []
-    for campo in ("sellerName", "sellerId", "seller"):
-        valor = prod.get(campo)
-        if isinstance(valor, str) and valor.strip():
-            posibles_vendedores.append(valor.strip().upper())
+    campos_vendedor = []
+    for k in ("sellerName", "sellerId", "offeredBy", "seller", "vendor"):
+        val = prod.get(k)
+        if isinstance(val, str) and val.strip():
+            campos_vendedor.append(val.strip().upper())
 
-    variantes = prod.get("variants")
-    if isinstance(variantes, list):
-        for v in variantes:
-            if isinstance(v, dict):
-                for campo in ("sellerName", "sellerId"):
-                    valor = v.get(campo)
-                    if isinstance(valor, str) and valor.strip():
-                        posibles_vendedores.append(valor.strip().upper())
-
-    for vend in posibles_vendedores:
-        if vend.startswith("SC") or "MARKETPLACE" in vend:
+    for texto_vend in campos_vendedor:
+        if texto_vend.startswith("SC") or "MARKETPLACE" in texto_vend:
             return False
-        if "FALABELLA" not in vend:
+        if "FALABELLA" not in texto_vend:
             return False
 
     nombre = str(prod.get("displayName") or "").upper()
@@ -378,21 +411,23 @@ def monitorear_ofertas() -> None:
     notificados = cargar_notificados()
     nuevos_registros = False
     alertas_enviadas = 0
+    navegador = NavegadorRespaldo()
 
     try:
-        # Sesión con impersonación TLS de Chrome real para pasar el firewall de Falabella
-        with cffi_requests.Session(impersonate="chrome120") as session:
-            session.headers.update(
+        with (
+            requests.Session() as req_sess,
+            cffi_requests.Session(impersonate="safari17_0") as cffi_sess,
+        ):
+            req_sess.headers.update(
                 {
+                    "User-Agent": (
+                        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                        "(KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+                    ),
+                    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
                     "Accept-Language": "es-PE,es;q=0.9,en;q=0.8",
                 }
             )
-
-            # Visita inicial rápida para obtener cookies de sesión válidas de Falabella Perú
-            try:
-                session.get("https://www.falabella.com.pe/falabella-pe", timeout=10)
-            except Exception:
-                pass
 
             for cat in CATEGORIAS:
                 if alertas_enviadas >= MAX_ALERTAS_POR_EJECUCION:
@@ -402,7 +437,9 @@ def monitorear_ofertas() -> None:
                     if alertas_enviadas >= MAX_ALERTAS_POR_EJECUCION:
                         break
 
-                    resultados = obtener_productos_pagina(session, cat, pagina)
+                    resultados = obtener_productos_pagina(
+                        req_sess, cffi_sess, navegador, cat, pagina
+                    )
                     oficiales = [p for p in resultados if es_vendedor_oficial(p)]
 
                     print(
@@ -417,7 +454,7 @@ def monitorear_ofertas() -> None:
                         if alertas_enviadas >= MAX_ALERTAS_POR_EJECUCION:
                             break
 
-                        prod_id = str(prod.get("productId", "")).strip()
+                        prod_id = str(prod.get("productId") or prod.get("skuId") or "").strip()
                         if not prod_id:
                             continue
 
@@ -456,7 +493,9 @@ def monitorear_ofertas() -> None:
                                 f"Enlace: {url_prod}"
                             )
 
-                            if enviar_alerta_telegram(session, mensaje, urls_img):
+                            if enviar_alerta_telegram(
+                                req_sess, cffi_sess, mensaje, urls_img
+                            ):
                                 notificados.add(clave_unica)
                                 nuevos_registros = True
                                 alertas_enviadas += 1
@@ -464,8 +503,9 @@ def monitorear_ofertas() -> None:
                                     f"[OK] ({alertas_enviadas}/{MAX_ALERTAS_POR_EJECUCION}) "
                                     f"{nombre} (-{descuento:.1f}%)"
                                 )
-                                time.sleep(0.6)
+                                time.sleep(0.5)
     finally:
+        navegador.cerrar()
         if nuevos_registros:
             guardar_notificados(notificados)
             print(
