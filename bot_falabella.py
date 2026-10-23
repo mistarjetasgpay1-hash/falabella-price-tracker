@@ -19,10 +19,11 @@ if not TELEGRAM_TOKEN or not CHAT_ID:
     )
 
 ARCHIVO_ESTADO = Path("notificados_falabella.json")
-UMBRAL_DESCUENTO = 45.0
-PAGINAS_A_ESCANEAR = 4
+UMBRAL_DESCUENTO = 40.0  # Umbral en 40% para captar más ofertas reales de Falabella Oficial
+PAGINAS_A_ESCANEAR = 3
 MAX_ALERTAS_POR_EJECUCION = 30
 
+# URLs verificadas de Falabella Perú
 CATEGORIAS = [
     {
         "nombre": "Tecnología",
@@ -30,7 +31,8 @@ CATEGORIAS = [
     },
     {
         "nombre": "Celulares",
-        "url": "https://www.falabella.com.pe/falabella-pe/category/cat70057/Celulares-y-Telefonos",
+        "url": "https://www.falabella.com.pe/falabella-pe/category/cat760706/Celulares-y-Telefonos",
+        "url_alt": "https://www.falabella.com.pe/falabella-pe/category/cat70057/Celulares-y-Telefonos",
     },
     {
         "nombre": "Electrohogar",
@@ -64,7 +66,7 @@ def guardar_notificados(notificados: set) -> None:
 
 
 def construir_urls_imagen(prod: dict) -> list[str]:
-    """Construye todas las variantes válidas del CDN de imágenes de Falabella Perú."""
+    """Construye las URLs del CDN de imágenes de Falabella Perú forzando salida JPEG."""
     urls = []
     media_urls = prod.get("mediaUrls") or []
     if isinstance(media_urls, str):
@@ -106,7 +108,7 @@ def construir_urls_imagen(prod: dict) -> list[str]:
 def descargar_y_convertir_jpeg(
     cffi_sess: cffi_requests.Session, urls_imagen: list[str]
 ) -> bytes | None:
-    """Descarga la imagen del CDN y la convierte a JPEG RGB real en memoria."""
+    """Descarga la imagen del producto y la convierte a JPEG RGB real con Pillow."""
     headers_img = {
         "Accept": "image/jpeg,image/png,image/webp,image/*,*/*;q=0.8",
         "Referer": "https://www.falabella.com.pe/",
@@ -133,7 +135,6 @@ def enviar_alerta_telegram(
 ) -> bool:
     base_url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}"
 
-    # 1. Descargar y convertir imagen a JPEG estándar para subirla a Telegram
     img_bytes = descargar_y_convertir_jpeg(cffi_sess, urls_imagen)
     if img_bytes:
         for _ in range(2):
@@ -158,7 +159,6 @@ def enviar_alerta_telegram(
                 print(f"[WARN] Error de red en sendPhoto: {e}")
                 break
 
-    # 2. Respaldo en texto plano solo si el producto no tiene foto
     payload_texto = {
         "chat_id": CHAT_ID,
         "text": mensaje,
@@ -211,25 +211,8 @@ def buscar_productos_recursivo(nodo) -> list:
     return []
 
 
-def extraer_productos_de_html(html_texto: str) -> list:
-    if not html_texto:
-        return []
-    match = re.search(
-        r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>',
-        html_texto,
-        re.DOTALL,
-    )
-    if match:
-        try:
-            next_data = json.loads(match.group(1))
-            return buscar_productos_recursivo(next_data)
-        except json.JSONDecodeError:
-            pass
-    return []
-
-
-class NavegadorRespaldo:
-    """Abre Google Chrome real en caso de que Akamai devuelva HTTP 403."""
+class NavegadorChrome:
+    """Gestiona Google Chrome real con reinicio rápido por categoría para evitar bloqueos."""
 
     def __init__(self) -> None:
         self.page = None
@@ -252,19 +235,21 @@ class NavegadorRespaldo:
         co.set_argument("--disable-dev-shm-usage")
         co.set_argument("--disable-gpu")
         co.set_argument("--disable-blink-features=AutomationControlled")
+        co.set_argument("--blink-settings=imagesEnabled=false")  # Carga 3x más rápido sin descargar fotos en el navegador
         co.set_argument("--window-size=1366,768")
         co.set_argument("--lang=es-PE")
 
         self.page = ChromiumPage(co)
         return self.page
 
-    def obtener_productos(self, url_completa: str) -> list:
-        try:
-            page = self.iniciar()
-            page.get(url_completa, timeout=20)
+    def reiniciar(self) -> None:
+        self.cerrar()
+        time.sleep(0.4)
+        self.iniciar()
 
-            # Esperar hasta 6 segundos a que cargue __NEXT_DATA__
-            for _ in range(12):
+    def extraer_json_actual(self, page) -> list:
+        for _ in range(10):
+            try:
                 js_data = page.run_js(
                     "return window.__NEXT_DATA__ ? JSON.stringify(window.__NEXT_DATA__) : '';"
                 )
@@ -273,13 +258,32 @@ class NavegadorRespaldo:
                     prods = buscar_productos_recursivo(datos)
                     if prods:
                         return prods
-                html_actual = page.html
-                prods = extraer_productos_de_html(html_actual)
-                if prods:
-                    return prods
-                time.sleep(0.5)
-        except Exception as e:
-            print(f"[WARN] Error en Chrome de respaldo: {e}")
+            except Exception:
+                pass
+            time.sleep(0.4)
+        return []
+
+    def obtener_productos_categoria(self, cat: dict, pagina: int) -> list:
+        urls_base = [cat["url"]]
+        if "url_alt" in cat:
+            urls_base.append(cat["url_alt"])
+
+        for base in urls_base:
+            # 1° Intentar con filtro nativo de Falabella Oficial + Mayor Descuento
+            variantes_query = [
+                f"{base}?page={pagina}&sortBy=derived.price.search.discount,desc&f.derived.variant.sellerId=FALABELLA&facetSelected=true",
+                f"{base}?page={pagina}&sortBy=derived.price.search.discount,desc",
+            ]
+            for url_completa in variantes_query:
+                try:
+                    page = self.iniciar()
+                    page.get(url_completa, timeout=15)
+                    prods = self.extraer_json_actual(page)
+                    if prods:
+                        return prods
+                except Exception as e:
+                    print(f"[WARN] Reintentando navegador en {cat['nombre']}: {e}")
+                    self.reiniciar()
         return []
 
     def cerrar(self) -> None:
@@ -291,53 +295,8 @@ class NavegadorRespaldo:
             self.page = None
 
 
-def obtener_productos_pagina(
-    req_sess: requests.Session,
-    cffi_sess: cffi_requests.Session,
-    navegador: NavegadorRespaldo,
-    cat: dict,
-    pagina: int,
-) -> list:
-    url_con_orden = f"{cat['url']}?page={pagina}&sortBy=derived.price.search.discount,desc"
-    url_simple = f"{cat['url']}?page={pagina}"
-
-    # Nivel 1: Petición directa con requests (sin tocar rutas 404 que bloquean la sesión)
-    for url_prueba in (url_con_orden, url_simple):
-        try:
-            resp = req_sess.get(url_prueba, timeout=12)
-            if resp.status_code == 200:
-                prods = extraer_productos_de_html(resp.text)
-                if prods:
-                    return prods
-        except requests.RequestException:
-            pass
-
-    # Nivel 2: Petición con curl_cffi (huella TLS de navegador sin sobrescribir cabeceras)
-    for url_prueba in (url_con_orden, url_simple):
-        try:
-            resp_cffi = cffi_sess.get(url_prueba, timeout=12)
-            if resp_cffi.status_code == 200:
-                prods = extraer_productos_de_html(resp_cffi.text)
-                if prods:
-                    return prods
-        except Exception:
-            pass
-
-    # Nivel 3: Respaldo con Google Chrome real (salta el bloqueo HTTP 403 de Akamai)
-    for url_prueba in (url_con_orden, url_simple):
-        prods = navegador.obtener_productos(url_prueba)
-        if prods:
-            return prods
-
-    return []
-
-
 def es_vendedor_oficial(prod: dict) -> bool:
-    """
-    Verifica estrictamente que el producto sea vendido por Falabella Oficial:
-    1. Descarta cualquier producto con flag de Marketplace o ID de 9 dígitos que empiece con '1' (3P Seller Center).
-    2. Revisa todos los campos posibles de vendedor ('sellerName', 'sellerId', 'offeredBy', 'seller').
-    """
+    """Verifica estrictamente que el producto sea vendido por Falabella Oficial."""
     if prod.get("isMarketplace") is True or prod.get("marketplace") is True:
         return False
 
@@ -367,7 +326,11 @@ def es_vendedor_oficial(prod: dict) -> bool:
 
 def limpiar_precio(valor_raw) -> float:
     if isinstance(valor_raw, list):
-        valor_raw = valor_raw[0] if valor_raw else ""
+        for v in valor_raw:
+            monto = limpiar_precio(v)
+            if monto > 0:
+                return monto
+        return 0.0
     if not valor_raw:
         return 0.0
     limpio = re.sub(r"[^\d.]", "", str(valor_raw).replace(",", ""))
@@ -411,40 +374,40 @@ def monitorear_ofertas() -> None:
     notificados = cargar_notificados()
     nuevos_registros = False
     alertas_enviadas = 0
-    navegador = NavegadorRespaldo()
+    navegador = NavegadorChrome()
 
     try:
         with (
             requests.Session() as req_sess,
-            cffi_requests.Session(impersonate="safari17_0") as cffi_sess,
+            cffi_requests.Session(impersonate="chrome120") as cffi_sess,
         ):
-            req_sess.headers.update(
-                {
-                    "User-Agent": (
-                        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                        "(KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
-                    ),
-                    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-                    "Accept-Language": "es-PE,es;q=0.9,en;q=0.8",
-                }
-            )
-
-            for cat in CATEGORIAS:
+            for idx, cat in enumerate(CATEGORIAS):
                 if alertas_enviadas >= MAX_ALERTAS_POR_EJECUCION:
                     break
+
+                # Reiniciar sesión limpia de Chrome en cada categoría para evitar bloqueo Akamai tras 4 páginas
+                if idx > 0:
+                    navegador.reiniciar()
 
                 for pagina in range(1, PAGINAS_A_ESCANEAR + 1):
                     if alertas_enviadas >= MAX_ALERTAS_POR_EJECUCION:
                         break
 
-                    resultados = obtener_productos_pagina(
-                        req_sess, cffi_sess, navegador, cat, pagina
-                    )
+                    resultados = navegador.obtener_productos_categoria(cat, pagina)
                     oficiales = [p for p in resultados if es_vendedor_oficial(p)]
+
+                    max_desc_pagina = 0.0
+                    for p_of in oficiales:
+                        pl, po, _, _ = extraer_datos_falabella(p_of)
+                        if pl > 0 and 0 < po < pl:
+                            d = ((pl - po) / pl) * 100.0
+                            if d > max_desc_pagina:
+                                max_desc_pagina = d
 
                     print(
                         f"[INFO] {cat['nombre']} (pág {pagina}): "
-                        f"{len(resultados)} totales | {len(oficiales)} oficiales de Falabella."
+                        f"{len(resultados)} totales | {len(oficiales)} oficiales "
+                        f"(Máx desc: {max_desc_pagina:.1f}%)."
                     )
 
                     if not resultados:
@@ -454,7 +417,9 @@ def monitorear_ofertas() -> None:
                         if alertas_enviadas >= MAX_ALERTAS_POR_EJECUCION:
                             break
 
-                        prod_id = str(prod.get("productId") or prod.get("skuId") or "").strip()
+                        prod_id = str(
+                            prod.get("productId") or prod.get("skuId") or ""
+                        ).strip()
                         if not prod_id:
                             continue
 
