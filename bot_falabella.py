@@ -19,38 +19,43 @@ if not TELEGRAM_TOKEN or not CHAT_ID:
     )
 
 ARCHIVO_ESTADO = Path("notificados_falabella.json")
-UMBRAL_DESCUENTO = 40.0  # Umbral en 40% para captar más ofertas reales de Falabella Oficial
+UMBRAL_DESCUENTO = 35.0  # Detecta ofertas desde 35% de descuento real
 PAGINAS_A_ESCANEAR = 3
 MAX_ALERTAS_POR_EJECUCION = 30
 
-# URLs verificadas de Falabella Perú
+# Categorías de Falabella Perú usando las rutas reales de su menú
 CATEGORIAS = [
     {
         "nombre": "Tecnología",
         "url": "https://www.falabella.com.pe/falabella-pe/category/cat760706/Tecnologia",
     },
     {
-        "nombre": "Celulares",
-        "url": "https://www.falabella.com.pe/falabella-pe/category/cat760706/Celulares-y-Telefonos",
-        "url_alt": "https://www.falabella.com.pe/falabella-pe/category/cat70057/Celulares-y-Telefonos",
+        "nombre": "TV y Monitores",
+        "url": "https://www.falabella.com.pe/falabella-pe/category/cat760706/Tecnologia?f.product.L2_category_paths=cat760706%7CTecnolog%C3%ADa%2Fcat40554%7CTV-y-Televisores",
+        "url_respaldo": "https://www.falabella.com.pe/falabella-pe/collection/televisores",
+    },
+    {
+        "nombre": "Celulares y Smartphones",
+        "url": "https://www.falabella.com.pe/falabella-pe/category/cat760706/Tecnologia?f.product.L2_category_paths=cat760706%7CTecnolog%C3%ADa%2Fcat70057%7CCelulares-y-Tel%C3%A9fonos",
+        "url_respaldo": "https://www.falabella.com.pe/falabella-pe/collection/celulares",
+    },
+    {
+        "nombre": "Cómputo y Laptops",
+        "url": "https://www.falabella.com.pe/falabella-pe/category/cat760706/Tecnologia?f.product.L2_category_paths=cat760706%7CTecnolog%C3%ADa%2Fcat40496%7CC%C3%B3mputo",
+        "url_respaldo": "https://www.falabella.com.pe/falabella-pe/collection/laptops",
     },
     {
         "nombre": "Electrohogar",
         "url": "https://www.falabella.com.pe/falabella-pe/category/cat40512/Electrohogar",
-    },
-    {
-        "nombre": "Cómputo y Laptops",
-        "url": "https://www.falabella.com.pe/falabella-pe/category/cat40496/Computo",
-    },
-    {
-        "nombre": "Televisores",
-        "url": "https://www.falabella.com.pe/falabella-pe/category/cat40554/Televisores",
+        "url_respaldo": "https://www.falabella.com.pe/falabella-pe/category/cat3130002/Electrohogar",
     },
 ]
 
 
 def cargar_notificados() -> set:
     if not ARCHIVO_ESTADO.exists():
+        # Si no existe el archivo, lo crea automáticamente con []
+        guardar_notificados(set())
         return set()
     try:
         with ARCHIVO_ESTADO.open("r", encoding="utf-8") as f:
@@ -66,7 +71,7 @@ def guardar_notificados(notificados: set) -> None:
 
 
 def construir_urls_imagen(prod: dict) -> list[str]:
-    """Construye las URLs del CDN de imágenes de Falabella Perú forzando salida JPEG."""
+    """Construye todas las variantes válidas del CDN de imágenes de Falabella Perú."""
     urls = []
     media_urls = prod.get("mediaUrls") or []
     if isinstance(media_urls, str):
@@ -108,7 +113,7 @@ def construir_urls_imagen(prod: dict) -> list[str]:
 def descargar_y_convertir_jpeg(
     cffi_sess: cffi_requests.Session, urls_imagen: list[str]
 ) -> bytes | None:
-    """Descarga la imagen del producto y la convierte a JPEG RGB real con Pillow."""
+    """Descarga la imagen del producto y la convierte a JPEG RGB estándar con Pillow."""
     headers_img = {
         "Accept": "image/jpeg,image/png,image/webp,image/*,*/*;q=0.8",
         "Referer": "https://www.falabella.com.pe/",
@@ -211,8 +216,25 @@ def buscar_productos_recursivo(nodo) -> list:
     return []
 
 
-class NavegadorChrome:
-    """Gestiona Google Chrome real con reinicio rápido por categoría para evitar bloqueos."""
+def extraer_productos_de_html(html_texto: str) -> list:
+    if not html_texto:
+        return []
+    match = re.search(
+        r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>',
+        html_texto,
+        re.DOTALL,
+    )
+    if match:
+        try:
+            next_data = json.loads(match.group(1))
+            return buscar_productos_recursivo(next_data)
+        except json.JSONDecodeError:
+            pass
+    return []
+
+
+class NavegadorRespaldo:
+    """Usa exactamente la configuración de Chrome que funcionó en la ejecución #2."""
 
     def __init__(self) -> None:
         self.page = None
@@ -235,21 +257,18 @@ class NavegadorChrome:
         co.set_argument("--disable-dev-shm-usage")
         co.set_argument("--disable-gpu")
         co.set_argument("--disable-blink-features=AutomationControlled")
-        co.set_argument("--blink-settings=imagesEnabled=false")  # Carga 3x más rápido sin descargar fotos en el navegador
         co.set_argument("--window-size=1366,768")
         co.set_argument("--lang=es-PE")
 
         self.page = ChromiumPage(co)
         return self.page
 
-    def reiniciar(self) -> None:
-        self.cerrar()
-        time.sleep(0.4)
-        self.iniciar()
+    def obtener_productos(self, url_completa: str) -> list:
+        try:
+            page = self.iniciar()
+            page.get(url_completa, timeout=20)
 
-    def extraer_json_actual(self, page) -> list:
-        for _ in range(10):
-            try:
+            for _ in range(12):
                 js_data = page.run_js(
                     "return window.__NEXT_DATA__ ? JSON.stringify(window.__NEXT_DATA__) : '';"
                 )
@@ -258,32 +277,13 @@ class NavegadorChrome:
                     prods = buscar_productos_recursivo(datos)
                     if prods:
                         return prods
-            except Exception:
-                pass
-            time.sleep(0.4)
-        return []
-
-    def obtener_productos_categoria(self, cat: dict, pagina: int) -> list:
-        urls_base = [cat["url"]]
-        if "url_alt" in cat:
-            urls_base.append(cat["url_alt"])
-
-        for base in urls_base:
-            # 1° Intentar con filtro nativo de Falabella Oficial + Mayor Descuento
-            variantes_query = [
-                f"{base}?page={pagina}&sortBy=derived.price.search.discount,desc&f.derived.variant.sellerId=FALABELLA&facetSelected=true",
-                f"{base}?page={pagina}&sortBy=derived.price.search.discount,desc",
-            ]
-            for url_completa in variantes_query:
-                try:
-                    page = self.iniciar()
-                    page.get(url_completa, timeout=15)
-                    prods = self.extraer_json_actual(page)
-                    if prods:
-                        return prods
-                except Exception as e:
-                    print(f"[WARN] Reintentando navegador en {cat['nombre']}: {e}")
-                    self.reiniciar()
+                html_actual = page.html
+                prods = extraer_productos_de_html(html_actual)
+                if prods:
+                    return prods
+                time.sleep(0.5)
+        except Exception as e:
+            print(f"[WARN] Error en Chrome: {e}")
         return []
 
     def cerrar(self) -> None:
@@ -295,8 +295,36 @@ class NavegadorChrome:
             self.page = None
 
 
+def armar_url_pagina(base_url: str, pagina: int, con_orden: bool = True) -> str:
+    sep = "&" if "?" in base_url else "?"
+    if con_orden:
+        return f"{base_url}{sep}page={pagina}&sortBy=derived.price.search.discount,desc"
+    return f"{base_url}{sep}page={pagina}"
+
+
+def obtener_productos_pagina(
+    navegador: NavegadorRespaldo,
+    cat: dict,
+    pagina: int,
+) -> list:
+    candidatas = [
+        armar_url_pagina(cat["url"], pagina, con_orden=True),
+        armar_url_pagina(cat["url"], pagina, con_orden=False),
+    ]
+    if "url_respaldo" in cat:
+        candidatas.append(armar_url_pagina(cat["url_respaldo"], pagina, con_orden=True))
+
+    for url_prueba in candidatas:
+        prods = navegador.obtener_productos(url_prueba)
+        if prods:
+            time.sleep(1.0)  # Pequeña pausa humana para que Akamai no corte la sesión
+            return prods
+
+    return []
+
+
 def es_vendedor_oficial(prod: dict) -> bool:
-    """Verifica estrictamente que el producto sea vendido por Falabella Oficial."""
+    """Filtra estrictamente productos vendidos por Falabella Oficial."""
     if prod.get("isMarketplace") is True or prod.get("marketplace") is True:
         return False
 
@@ -326,36 +354,71 @@ def es_vendedor_oficial(prod: dict) -> bool:
 
 def limpiar_precio(valor_raw) -> float:
     if isinstance(valor_raw, list):
-        for v in valor_raw:
-            monto = limpiar_precio(v)
-            if monto > 0:
-                return monto
-        return 0.0
+        montos = [limpiar_precio(v) for v in valor_raw]
+        montos = [m for m in montos if m > 0]
+        return montos[0] if montos else 0.0
+    if isinstance(valor_raw, (int, float)):
+        return float(valor_raw)
     if not valor_raw:
         return 0.0
-    limpio = re.sub(r"[^\d.]", "", str(valor_raw).replace(",", ""))
+    texto = str(valor_raw).strip()
+    # Eliminar símbolo de moneda y separadores de miles (ej. "S/ 1,299.90" o "1.299")
+    texto = re.sub(r"[^\d.,]", "", texto)
+    if "," in texto and "." in texto:
+        texto = texto.replace(",", "")
+    elif "," in texto:
+        partes = texto.split(",")
+        if len(partes[-1]) == 2:
+            texto = texto.replace(",", ".")
+        else:
+            texto = texto.replace(",", "")
     try:
-        return float(limpio)
+        return float(texto)
     except ValueError:
         return 0.0
 
 
-def extraer_datos_falabella(prod: dict) -> tuple[float, float, str, list[str]]:
+def extraer_datos_falabella(prod: dict) -> tuple[float, float, float, str, list[str]]:
+    """
+    Extrae (precio_lista, precio_oferta, descuento_porcentaje, url_producto, urls_imagen)
+    revisando tanto la lista 'prices' como las etiquetas de descuento ('discountBadge').
+    """
     precios = prod.get("prices", [])
     precios_detectados = []
 
     for p in precios:
         if not isinstance(p, dict):
             continue
-        monto = limpiar_precio(p.get("price"))
-        if monto > 0:
-            precios_detectados.append(monto)
+        for llave_p in ("price", "originalPrice", "cmrPrice", "internetPrice", "eventPrice"):
+            if llave_p in p:
+                monto = limpiar_precio(p.get(llave_p))
+                if monto > 0:
+                    precios_detectados.append(monto)
 
     if len(precios_detectados) >= 2:
         precio_lista = max(precios_detectados)
         precio_oferta = min(precios_detectados)
+    elif len(precios_detectados) == 1:
+        precio_oferta = precios_detectados[0]
+        precio_lista = precio_oferta
     else:
         precio_lista, precio_oferta = 0.0, 0.0
+
+    descuento_calc = 0.0
+    if precio_lista > 0 and 0 < precio_oferta < precio_lista:
+        descuento_calc = ((precio_lista - precio_oferta) / precio_lista) * 100.0
+
+    # Verificar también si viene el porcentaje directo en el JSON de Falabella
+    for campo_desc in ("discountBadge", "discount", "discountPercentage"):
+        val_d = prod.get(campo_desc)
+        if val_d:
+            m = re.search(r"(\d{1,2})\s*%", str(val_d))
+            if m:
+                d_json = float(m.group(1))
+                if d_json > descuento_calc and precio_oferta > 0:
+                    descuento_calc = d_json
+                    if precio_lista <= precio_oferta:
+                        precio_lista = round(precio_oferta / (1.0 - (d_json / 100.0)), 2)
 
     url_producto = str(prod.get("url") or "").strip()
     if url_producto and not url_producto.startswith("http"):
@@ -366,7 +429,7 @@ def extraer_datos_falabella(prod: dict) -> tuple[float, float, str, list[str]]:
 
     urls_imagen = construir_urls_imagen(prod)
 
-    return precio_lista, precio_oferta, url_producto, urls_imagen
+    return precio_lista, precio_oferta, descuento_calc, url_producto, urls_imagen
 
 
 def monitorear_ofertas() -> None:
@@ -374,40 +437,34 @@ def monitorear_ofertas() -> None:
     notificados = cargar_notificados()
     nuevos_registros = False
     alertas_enviadas = 0
-    navegador = NavegadorChrome()
+    navegador = NavegadorRespaldo()
 
     try:
         with (
             requests.Session() as req_sess,
-            cffi_requests.Session(impersonate="chrome120") as cffi_sess,
+            cffi_requests.Session(impersonate="safari17_0") as cffi_sess,
         ):
-            for idx, cat in enumerate(CATEGORIAS):
+            for cat in CATEGORIAS:
                 if alertas_enviadas >= MAX_ALERTAS_POR_EJECUCION:
                     break
-
-                # Reiniciar sesión limpia de Chrome en cada categoría para evitar bloqueo Akamai tras 4 páginas
-                if idx > 0:
-                    navegador.reiniciar()
 
                 for pagina in range(1, PAGINAS_A_ESCANEAR + 1):
                     if alertas_enviadas >= MAX_ALERTAS_POR_EJECUCION:
                         break
 
-                    resultados = navegador.obtener_productos_categoria(cat, pagina)
+                    resultados = obtener_productos_pagina(navegador, cat, pagina)
                     oficiales = [p for p in resultados if es_vendedor_oficial(p)]
 
-                    max_desc_pagina = 0.0
+                    max_desc_pag = 0.0
                     for p_of in oficiales:
-                        pl, po, _, _ = extraer_datos_falabella(p_of)
-                        if pl > 0 and 0 < po < pl:
-                            d = ((pl - po) / pl) * 100.0
-                            if d > max_desc_pagina:
-                                max_desc_pagina = d
+                        _, _, d_of, _, _ = extraer_datos_falabella(p_of)
+                        if d_of > max_desc_pag:
+                            max_desc_pag = d_of
 
                     print(
                         f"[INFO] {cat['nombre']} (pág {pagina}): "
-                        f"{len(resultados)} totales | {len(oficiales)} oficiales "
-                        f"(Máx desc: {max_desc_pagina:.1f}%)."
+                        f"{len(resultados)} totales | {len(oficiales)} oficiales de Falabella "
+                        f"(Máx desc: {max_desc_pag:.1f}%)."
                     )
 
                     if not resultados:
@@ -423,55 +480,46 @@ def monitorear_ofertas() -> None:
                         if not prod_id:
                             continue
 
-                        precio_lista, precio_oferta, url_prod, urls_img = (
+                        precio_lista, precio_oferta, descuento, url_prod, urls_img = (
                             extraer_datos_falabella(prod)
                         )
 
-                        if (
-                            precio_lista <= 0
-                            or precio_oferta <= 0
-                            or precio_oferta >= precio_lista
-                        ):
+                        if precio_oferta <= 0 or descuento < UMBRAL_DESCUENTO:
                             continue
 
                         clave_unica = f"{prod_id}|{precio_oferta:.2f}"
                         if clave_unica in notificados:
                             continue
 
-                        descuento = (
-                            (precio_lista - precio_oferta) / precio_lista
-                        ) * 100.0
+                        nombre = prod.get(
+                            "displayName", "Producto sin nombre"
+                        ).strip()
+                        marca = prod.get("brand", "Genérico").strip()
 
-                        if descuento >= UMBRAL_DESCUENTO:
-                            nombre = prod.get(
-                                "displayName", "Producto sin nombre"
-                            ).strip()
-                            marca = prod.get("brand", "Genérico").strip()
+                        mensaje = (
+                            f"🟢 OFERTA FALABELLA OFICIAL (-{descuento:.1f}%)\n\n"
+                            f"Producto: {nombre}\n"
+                            f"Marca: {marca}\n"
+                            f"Vendedor: Falabella Oficial\n"
+                            f"Precio Normal: S/ {precio_lista:,.2f}\n"
+                            f"Precio Oferta: S/ {precio_oferta:,.2f}\n\n"
+                            f"Enlace: {url_prod}"
+                        )
 
-                            mensaje = (
-                                f"🟢 OFERTA FALABELLA OFICIAL (-{descuento:.1f}%)\n\n"
-                                f"Producto: {nombre}\n"
-                                f"Marca: {marca}\n"
-                                f"Vendedor: Falabella Oficial\n"
-                                f"Precio Normal: S/ {precio_lista:,.2f}\n"
-                                f"Precio Oferta: S/ {precio_oferta:,.2f}\n\n"
-                                f"Enlace: {url_prod}"
+                        if enviar_alerta_telegram(
+                            req_sess, cffi_sess, mensaje, urls_img
+                        ):
+                            notificados.add(clave_unica)
+                            nuevos_registros = True
+                            alertas_enviadas += 1
+                            print(
+                                f"[OK] ({alertas_enviadas}/{MAX_ALERTAS_POR_EJECUCION}) "
+                                f"{nombre} (-{descuento:.1f}%)"
                             )
-
-                            if enviar_alerta_telegram(
-                                req_sess, cffi_sess, mensaje, urls_img
-                            ):
-                                notificados.add(clave_unica)
-                                nuevos_registros = True
-                                alertas_enviadas += 1
-                                print(
-                                    f"[OK] ({alertas_enviadas}/{MAX_ALERTAS_POR_EJECUCION}) "
-                                    f"{nombre} (-{descuento:.1f}%)"
-                                )
-                                time.sleep(0.5)
+                            time.sleep(0.5)
     finally:
         navegador.cerrar()
-        if nuevos_registros:
+        if nuevos_registros or not ARCHIVO_ESTADO.exists():
             guardar_notificados(notificados)
             print(
                 f"[INFO] Se guardaron {alertas_enviadas} ofertas nuevas en {ARCHIVO_ESTADO.name}."
