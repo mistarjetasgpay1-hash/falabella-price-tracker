@@ -19,15 +19,43 @@ if not TELEGRAM_TOKEN or not CHAT_ID:
     )
 
 ARCHIVO_ESTADO = Path("notificados_falabella.json")
-UMBRAL_DESCUENTO = 35.0  # Porcentaje mínimo de descuento para alertar
-PAGINAS_A_ESCANEAR = 6   # 6 páginas = ~348 productos ordenados de mayor a menor descuento
-MAX_ALERTAS_POR_EJECUCION = 30
+UMBRAL_DESCUENTO = 49.5  # Solo descuentos mayores a 49% (50% a más)
+PAGINAS_A_ESCANEAR = 3   # Con filtro sellerId=FALABELLA, 3 págs = ~144 productos 100% oficiales por categoría
+MAX_ALERTAS_POR_EJECUCION = 35
 
-# Categoría principal verificada (incluye Celulares, TV, Cómputo, Audio y Accesorios)
+# Categorías oficiales verificadas de Falabella Perú
 CATEGORIAS = [
     {
-        "nombre": "Tecnología (Celulares, TV, Cómputo)",
-        "url": "https://www.falabella.com.pe/falabella-pe/category/cat760706/Tecnologia",
+        "nombre": "Tecnología (TV, Cómputo, Audio, Gaming)",
+        "url": "https://www.falabella.com.pe/falabella-pe/category/cat40793/Tecnologia",
+    },
+    {
+        "nombre": "Celulares y Teléfonos",
+        "url": "https://www.falabella.com.pe/falabella-pe/category/cat760706/Celulares-y-Telefonos",
+    },
+    {
+        "nombre": "Electrohogar",
+        "url": "https://www.falabella.com.pe/falabella-pe/category/cat40584/Electrohogar",
+    },
+    {
+        "nombre": "Moda Mujer (Ropa)",
+        "url": "https://www.falabella.com.pe/falabella-pe/category/cat4100462/Moda-Mujer",
+    },
+    {
+        "nombre": "Moda Hombre (Ropa)",
+        "url": "https://www.falabella.com.pe/falabella-pe/category/cat4100481/Moda-Hombre",
+    },
+    {
+        "nombre": "Zapatillas y Calzado",
+        "url": "https://www.falabella.com.pe/falabella-pe/category/cat1470548/Zapatillas",
+    },
+    {
+        "nombre": "Accesorios Moda y Relojes",
+        "url": "https://www.falabella.com.pe/falabella-pe/category/cat11450461/Mas-Accesorios-Moda",
+    },
+    {
+        "nombre": "Deportes y Aire Libre",
+        "url": "https://www.falabella.com.pe/falabella-pe/category/cat40571/Deportes-y-aire-libre",
     },
 ]
 
@@ -50,7 +78,6 @@ def guardar_notificados(notificados: set) -> None:
 
 
 def construir_urls_imagen(prod: dict) -> list[str]:
-    """Construye todas las variantes válidas del CDN de imágenes de Falabella Perú."""
     urls = []
     media_urls = prod.get("mediaUrls") or []
     if isinstance(media_urls, str):
@@ -92,7 +119,6 @@ def construir_urls_imagen(prod: dict) -> list[str]:
 def descargar_y_convertir_jpeg(
     cffi_sess: cffi_requests.Session, urls_imagen: list[str]
 ) -> bytes | None:
-    """Descarga la imagen del producto y la convierte a JPEG RGB estándar con Pillow."""
     headers_img = {
         "Accept": "image/jpeg,image/png,image/webp,image/*,*/*;q=0.8",
         "Referer": "https://www.falabella.com.pe/",
@@ -213,8 +239,6 @@ def extraer_productos_de_html(html_texto: str) -> list:
 
 
 class NavegadorRespaldo:
-    """Gestiona Google Chrome real para saltar el bloqueo de Akamai."""
-
     def __init__(self) -> None:
         self.page = None
 
@@ -248,6 +272,10 @@ class NavegadorRespaldo:
             page.get(url_completa, timeout=18)
 
             for _ in range(10):
+                html_actual = page.html
+                prods = extraer_productos_de_html(html_actual)
+                if prods:
+                    return prods
                 js_data = page.run_js(
                     "return window.__NEXT_DATA__ ? JSON.stringify(window.__NEXT_DATA__) : '';"
                 )
@@ -256,10 +284,6 @@ class NavegadorRespaldo:
                     prods = buscar_productos_recursivo(datos)
                     if prods:
                         return prods
-                html_actual = page.html
-                prods = extraer_productos_de_html(html_actual)
-                if prods:
-                    return prods
                 time.sleep(0.5)
         except Exception as e:
             print(f"[WARN] Error en Chrome: {e}")
@@ -276,9 +300,14 @@ class NavegadorRespaldo:
 
 def armar_url_pagina(base_url: str, pagina: int, con_orden: bool = True) -> str:
     sep = "&" if "?" in base_url else "?"
+    # Filtra directamente en el servidor de Falabella solo productos vendidos por Falabella Oficial
+    filtro_oficial = "facetSelected=true&f.derived.variant.sellerId=FALABELLA"
     if con_orden:
-        return f"{base_url}{sep}page={pagina}&sortBy=derived.price.search.discount,desc"
-    return f"{base_url}{sep}page={pagina}"
+        return (
+            f"{base_url}{sep}{filtro_oficial}"
+            f"&page={pagina}&sortBy=derived.price.search.discount,desc"
+        )
+    return f"{base_url}{sep}{filtro_oficial}&page={pagina}"
 
 
 def obtener_productos_pagina(
@@ -294,21 +323,16 @@ def obtener_productos_pagina(
     for url_prueba in candidatas:
         prods = navegador.obtener_productos(url_prueba)
         if prods:
-            time.sleep(0.8)
+            time.sleep(0.6)
             return prods
 
     return []
 
 
 def es_vendedor_oficial(prod: dict) -> bool:
-    """Filtra estrictamente productos vendidos por Falabella Oficial."""
+    """Verifica que el producto sea vendido por Falabella y no reacondicionado."""
     if prod.get("isMarketplace") is True or prod.get("marketplace") is True:
         return False
-
-    for key in ("productId", "skuId"):
-        val = str(prod.get(key) or "").strip()
-        if val.isdigit() and len(val) >= 9 and val.startswith("1"):
-            return False
 
     campos_vendedor = []
     for k in ("sellerName", "sellerId", "offeredBy", "seller", "vendor"):
@@ -333,7 +357,7 @@ def limpiar_precio(valor_raw) -> float:
     if isinstance(valor_raw, list):
         montos = [limpiar_precio(v) for v in valor_raw]
         montos = [m for m in montos if m > 0]
-        return montos[0] if montos else 0.0
+        return min(montos) if montos else 0.0
     if isinstance(valor_raw, (int, float)):
         return float(valor_raw)
     if not valor_raw:
@@ -434,7 +458,7 @@ def monitorear_ofertas() -> None:
 
                     print(
                         f"[INFO] {cat['nombre']} (pág {pagina}): "
-                        f"{len(resultados)} totales | {len(oficiales)} oficiales de Falabella "
+                        f"{len(resultados)} totales | {len(oficiales)} oficiales "
                         f"(Máx desc: {max_desc_pag:.1f}%)."
                     )
 
@@ -455,7 +479,7 @@ def monitorear_ofertas() -> None:
                             extraer_datos_falabella(prod)
                         )
 
-                        if precio_oferta <= 0 or descuento < UMBRAL_DESCUENTO:
+                        if precio_oferta <= 0 or descuento <= 49.0 or descuento < UMBRAL_DESCUENTO:
                             continue
 
                         clave_unica = f"{prod_id}|{precio_oferta:.2f}"
@@ -468,7 +492,8 @@ def monitorear_ofertas() -> None:
                         marca = prod.get("brand", "Genérico").strip()
 
                         mensaje = (
-                            f"🟢 OFERTA FALABELLA OFICIAL (-{descuento:.1f}%)\n\n"
+                            f"🟢 OFERTA FALABELLA OFICIAL (-{descuento:.0f}%)\n\n"
+                            f"Categoría: {cat['nombre']}\n"
                             f"Producto: {nombre}\n"
                             f"Marca: {marca}\n"
                             f"Vendedor: Falabella Oficial\n"
@@ -485,16 +510,14 @@ def monitorear_ofertas() -> None:
                             alertas_enviadas += 1
                             print(
                                 f"[OK] ({alertas_enviadas}/{MAX_ALERTAS_POR_EJECUCION}) "
-                                f"{nombre} (-{descuento:.1f}%)"
+                                f"[{cat['nombre']}] {nombre} (-{descuento:.1f}%)"
                             )
                             time.sleep(0.5)
 
-                    # Si los resultados están ordenados por mayor descuento y en esta página
-                    # ningún producto oficial llegó al umbral, no hace falta gastar tiempo en más páginas
                     if oficiales and max_desc_pag < (UMBRAL_DESCUENTO - 5.0):
                         print(
                             f"[INFO] Descuento máximo en pág {pagina} ({max_desc_pag:.1f}%) "
-                            f"menor al umbral ({UMBRAL_DESCUENTO:.1f}%). Fin del escaneo."
+                            f"menor al umbral ({UMBRAL_DESCUENTO:.1f}%). Pasando a la siguiente categoría."
                         )
                         break
     finally:
