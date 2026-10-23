@@ -19,42 +19,21 @@ if not TELEGRAM_TOKEN or not CHAT_ID:
     )
 
 ARCHIVO_ESTADO = Path("notificados_falabella.json")
-UMBRAL_DESCUENTO = 35.0  # Detecta ofertas desde 35% de descuento real
-PAGINAS_A_ESCANEAR = 3
+UMBRAL_DESCUENTO = 35.0  # Porcentaje mínimo de descuento para alertar
+PAGINAS_A_ESCANEAR = 6   # 6 páginas = ~348 productos ordenados de mayor a menor descuento
 MAX_ALERTAS_POR_EJECUCION = 30
 
-# Categorías de Falabella Perú usando las rutas reales de su menú
+# Categoría principal verificada (incluye Celulares, TV, Cómputo, Audio y Accesorios)
 CATEGORIAS = [
     {
-        "nombre": "Tecnología",
+        "nombre": "Tecnología (Celulares, TV, Cómputo)",
         "url": "https://www.falabella.com.pe/falabella-pe/category/cat760706/Tecnologia",
-    },
-    {
-        "nombre": "TV y Monitores",
-        "url": "https://www.falabella.com.pe/falabella-pe/category/cat760706/Tecnologia?f.product.L2_category_paths=cat760706%7CTecnolog%C3%ADa%2Fcat40554%7CTV-y-Televisores",
-        "url_respaldo": "https://www.falabella.com.pe/falabella-pe/collection/televisores",
-    },
-    {
-        "nombre": "Celulares y Smartphones",
-        "url": "https://www.falabella.com.pe/falabella-pe/category/cat760706/Tecnologia?f.product.L2_category_paths=cat760706%7CTecnolog%C3%ADa%2Fcat70057%7CCelulares-y-Tel%C3%A9fonos",
-        "url_respaldo": "https://www.falabella.com.pe/falabella-pe/collection/celulares",
-    },
-    {
-        "nombre": "Cómputo y Laptops",
-        "url": "https://www.falabella.com.pe/falabella-pe/category/cat760706/Tecnologia?f.product.L2_category_paths=cat760706%7CTecnolog%C3%ADa%2Fcat40496%7CC%C3%B3mputo",
-        "url_respaldo": "https://www.falabella.com.pe/falabella-pe/collection/laptops",
-    },
-    {
-        "nombre": "Electrohogar",
-        "url": "https://www.falabella.com.pe/falabella-pe/category/cat40512/Electrohogar",
-        "url_respaldo": "https://www.falabella.com.pe/falabella-pe/category/cat3130002/Electrohogar",
     },
 ]
 
 
 def cargar_notificados() -> set:
     if not ARCHIVO_ESTADO.exists():
-        # Si no existe el archivo, lo crea automáticamente con []
         guardar_notificados(set())
         return set()
     try:
@@ -234,7 +213,7 @@ def extraer_productos_de_html(html_texto: str) -> list:
 
 
 class NavegadorRespaldo:
-    """Usa exactamente la configuración de Chrome que funcionó en la ejecución #2."""
+    """Gestiona Google Chrome real para saltar el bloqueo de Akamai."""
 
     def __init__(self) -> None:
         self.page = None
@@ -266,9 +245,9 @@ class NavegadorRespaldo:
     def obtener_productos(self, url_completa: str) -> list:
         try:
             page = self.iniciar()
-            page.get(url_completa, timeout=20)
+            page.get(url_completa, timeout=18)
 
-            for _ in range(12):
+            for _ in range(10):
                 js_data = page.run_js(
                     "return window.__NEXT_DATA__ ? JSON.stringify(window.__NEXT_DATA__) : '';"
                 )
@@ -311,13 +290,11 @@ def obtener_productos_pagina(
         armar_url_pagina(cat["url"], pagina, con_orden=True),
         armar_url_pagina(cat["url"], pagina, con_orden=False),
     ]
-    if "url_respaldo" in cat:
-        candidatas.append(armar_url_pagina(cat["url_respaldo"], pagina, con_orden=True))
 
     for url_prueba in candidatas:
         prods = navegador.obtener_productos(url_prueba)
         if prods:
-            time.sleep(1.0)  # Pequeña pausa humana para que Akamai no corte la sesión
+            time.sleep(0.8)
             return prods
 
     return []
@@ -362,7 +339,6 @@ def limpiar_precio(valor_raw) -> float:
     if not valor_raw:
         return 0.0
     texto = str(valor_raw).strip()
-    # Eliminar símbolo de moneda y separadores de miles (ej. "S/ 1,299.90" o "1.299")
     texto = re.sub(r"[^\d.,]", "", texto)
     if "," in texto and "." in texto:
         texto = texto.replace(",", "")
@@ -379,10 +355,6 @@ def limpiar_precio(valor_raw) -> float:
 
 
 def extraer_datos_falabella(prod: dict) -> tuple[float, float, float, str, list[str]]:
-    """
-    Extrae (precio_lista, precio_oferta, descuento_porcentaje, url_producto, urls_imagen)
-    revisando tanto la lista 'prices' como las etiquetas de descuento ('discountBadge').
-    """
     precios = prod.get("prices", [])
     precios_detectados = []
 
@@ -408,7 +380,6 @@ def extraer_datos_falabella(prod: dict) -> tuple[float, float, float, str, list[
     if precio_lista > 0 and 0 < precio_oferta < precio_lista:
         descuento_calc = ((precio_lista - precio_oferta) / precio_lista) * 100.0
 
-    # Verificar también si viene el porcentaje directo en el JSON de Falabella
     for campo_desc in ("discountBadge", "discount", "discountPercentage"):
         val_d = prod.get(campo_desc)
         if val_d:
@@ -517,6 +488,15 @@ def monitorear_ofertas() -> None:
                                 f"{nombre} (-{descuento:.1f}%)"
                             )
                             time.sleep(0.5)
+
+                    # Si los resultados están ordenados por mayor descuento y en esta página
+                    # ningún producto oficial llegó al umbral, no hace falta gastar tiempo en más páginas
+                    if oficiales and max_desc_pag < (UMBRAL_DESCUENTO - 5.0):
+                        print(
+                            f"[INFO] Descuento máximo en pág {pagina} ({max_desc_pag:.1f}%) "
+                            f"menor al umbral ({UMBRAL_DESCUENTO:.1f}%). Fin del escaneo."
+                        )
+                        break
     finally:
         navegador.cerrar()
         if nuevos_registros or not ARCHIVO_ESTADO.exists():
