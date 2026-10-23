@@ -15,7 +15,7 @@ permissions:
 jobs:
   monitorear:
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    timeout-minutes: 10
 
     steps:
       - name: Descargar repositorio
