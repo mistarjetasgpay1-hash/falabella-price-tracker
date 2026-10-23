@@ -21,14 +21,14 @@ jobs:
       - name: Descargar repositorio
         uses: actions/checkout@v4
 
-      - name: Instalar dependencias (Anti-WAF e Imágenes)
-        run: pip install --quiet curl_cffi Pillow
+      - name: Instalar dependencias (Navegador Real e Imágenes)
+        run: pip install --quiet requests curl_cffi Pillow DrissionPage
 
       - name: Ejecutar bot de ofertas Falabella
         env:
           TELEGRAM_TOKEN2: ${{ secrets.TELEGRAM_TOKEN2 }}
           CHAT_ID2: ${{ secrets.CHAT_ID2 }}
-        run: python3 -u bot_falabella.py
+        run: xvfb-run -a python3 -u bot_falabella.py
 
       - name: Guardar estado si hubo cambios
         if: always()
