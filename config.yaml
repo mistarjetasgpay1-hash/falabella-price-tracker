@@ -1,0 +1,97 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  Monitor de ofertas Falabella Perú (Falabella + Tottus) — configuración
+#  Cambia umbrales o fuentes aquí; no hace falta tocar el código.
+# ─────────────────────────────────────────────────────────────────────────────
+store:
+  id: falabella
+  name: Falabella
+  hashtag_prefix: Falabella         # → #Falabella_Tecnologia, #Falabella_Moda…
+
+telegram:
+  token_env: TELEGRAM_TOKEN2        # nombre del secret con el token del bot de Falabella
+  chat_id_env: CHAT_ID2             # nombre del secret con el chat destino
+  min_interval_s: 3.2               # pausa entre mensajes (límite Telegram: ~20/min por grupo)
+  max_individual_alerts: 15         # alertas con foto por corrida (mayor descuento primero)
+  digest_max_items: 25              # el excedente se envía en UN mensaje resumen
+  send_photos: true
+  health_alert_after_failures: 3
+  # Grupo → emoji y, opcional, thread_id si conviertes el chat en grupo con Temas.
+  groups:
+    Tecnologia:   {emoji: "💻", thread_id: null}
+    Electro:      {emoji: "🔌", thread_id: null}
+    Moda:         {emoji: "👕", thread_id: null}
+    Deportes:     {emoji: "⚽", thread_id: null}
+    Juguetes:     {emoji: "🧸", thread_id: null}
+    Bebe:         {emoji: "🍼", thread_id: null}
+    Hogar:        {emoji: "🛋️", thread_id: null}
+    Belleza:      {emoji: "💄", thread_id: null}
+    Supermercado: {emoji: "🛒", thread_id: null}
+    Promos:       {emoji: "⚡", thread_id: null}
+
+offers:
+  min_discount_pct: 49.5            # umbral global (cada fuente puede tener min_discount propio)
+  min_price: 1.0
+  exclude_keywords: [reacondicionado, refurbished, "open box"]
+
+state:
+  path: state/falabella.json        # vive en la rama `state`, no en main
+  ttl_days: 3                       # cada producto puede volver a avisarse a los 3 días
+  renotify_drop_pct: 3              # …o antes, si su precio baja ≥3 % desde el último aviso
+  legacy_path: notificados_falabella.json   # se migra una sola vez (formato antiguo)
+
+http:
+  timeout_s: 25
+  retries: 2
+  backoff_base_s: 2
+  delay_min_s: 0.8
+  delay_max_s: 1.8
+
+scraper:
+  site_url: https://www.falabella.com.pe
+  impersonate: chrome               # huella TLS de curl_cffi
+  browser_fallback: true            # si HTTP es bloqueado, usa Chrome real (DrissionPage)
+  browser_timeout_s: 30
+  # Filtro estricto de tienda oficial
+  seller_facets: [FALABELLA, TOTTUS]                 # filtro en servidor (faceta "Vendido por")
+  allowed_seller_ids: [FALABELLA_PERU, TOTTUS_PERU]  # validación en cliente
+  use_card_price_for_discount: false  # el % se calcula SIN tarjeta CMR (el precio CMR se muestra aparte)
+  # La web no ordena por descuento: se leen las primeras páginas + una ventana que rota cada corrida.
+  fixed_pages: 2
+  rotating_pages: 2                 # 2 fijas + 2 rotativas = 4 páginas (192 productos) por fuente y corrida
+  max_page: 60                      # la ventana rotativa recorre hasta la pág. 60 y vuelve a empezar
+  sources:
+    # Tecnología y electro
+    - {key: Tecnologia,       url: /falabella-pe/category/cat40793/Tecnologia,              group: Tecnologia}
+    - {key: Celulares,        url: /falabella-pe/category/cat760706/Celulares-y-Telefonos,   group: Tecnologia}
+    - {key: Electrohogar,     url: /falabella-pe/category/cat40584/Electrohogar,             group: Electro}
+    # Moda, calzado y accesorios
+    - {key: ModaMujer,        url: /falabella-pe/category/cat4100462/Moda-Mujer,             group: Moda}
+    - {key: ModaHombre,       url: /falabella-pe/category/cat4100481/Moda-Hombre,            group: Moda}
+    - {key: ModaInfantil,     url: /falabella-pe/category/cat11510475/Moda-Infantil,         group: Moda}
+    - {key: Zapatillas,       url: /falabella-pe/category/cat1470548/Zapatillas,             group: Moda}
+    - {key: Accesorios,       url: /falabella-pe/category/cat11450461/Mas-Accesorios-Moda,   group: Moda}
+    - {key: Deportes,         url: /falabella-pe/category/cat40571/Deportes-y-aire-libre,    group: Deportes}
+    # Juguetes y bebé
+    - {key: Jugueteria,       url: /falabella-pe/category/CATG34943/Jugueteria,              group: Juguetes}
+    - {key: MundoBebe,        url: /falabella-pe/category/cat40497/Mundo-Bebe,               group: Bebe}
+    # Hogar
+    - {key: Dormitorio,       url: /falabella-pe/category/cat50684/Dormitorio,               group: Hogar}
+    - {key: Decoracion,       url: /falabella-pe/category/cat40474/Decoracion,               group: Hogar}
+    - {key: Muebles,          url: /falabella-pe/category/cat40700/Muebles,                  group: Hogar}
+    - {key: Cocina,           url: /falabella-pe/category/cat40538/Cocina,                   group: Hogar}
+    # Belleza
+    - {key: Perfumes,         url: /falabella-pe/category/cat40727/Perfumes,                 group: Belleza}
+    - {key: Maquillaje,       url: /falabella-pe/category/cat560663/Maquillaje,              group: Belleza}
+    - {key: BellezaHigiene,   url: /falabella-pe/category/cat40498/Belleza--higiene-y-salud, group: Belleza}
+    # Supermercado (principalmente Tottus)
+    - {key: AlimentosBebidas, url: /falabella-pe/category/cat7040473/Alimentos-y-bebidas,    group: Supermercado}
+    - {key: AseoLimpieza,     url: /falabella-pe/category/cat13920465/Utiles-de-aseo-y-limpieza, group: Supermercado}
+    - {key: Mascotas,         url: /falabella-pe/category/cat8050466/Mascotas,               group: Supermercado}
+    # Promociones
+    - {key: DescuentosCMR,    url: /falabella-pe/collection/descuentos-cmr,                  group: Promos}
+  # Detecta automáticamente colecciones de campaña enlazadas en la portada (Cyber, liquidaciones…)
+  discover_collections:
+    enabled: true
+    pattern: "liquid|descuent|cyber|black|flash|oferta|remate|outlet"
+    max: 4
+    group: Promos
