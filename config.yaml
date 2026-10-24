@@ -12,7 +12,7 @@ telegram:
   chat_id_env: CHAT_ID2             # nombre del secret con el chat destino
   min_interval_s: 3.2               # pausa entre mensajes (límite Telegram: ~20/min por grupo)
   max_individual_alerts: 15         # alertas con foto por corrida (mayor descuento primero)
-  digest_max_items: 25              # el excedente se envía en UN mensaje resumen
+  digest_max_items: 200             # el excedente va en resúmenes por grupo (hasta 30 ofertas por mensaje)
   send_photos: true
   health_alert_after_failures: 3
   # Grupo → emoji y, opcional, thread_id si conviertes el chat en grupo con Temas.

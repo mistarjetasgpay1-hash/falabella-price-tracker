@@ -57,7 +57,7 @@ El TTL es por producto, así que no hay una avalancha de re-avisos el mismo día
 
 - Secrets (Settings → Secrets and variables → Actions): `TELEGRAM_TOKEN2` y `CHAT_ID2`.
 - Cada mensaje lleva hashtags por grupo y categoría (ej. `#Falabella_Supermercado #AlimentosBebidas`). Puedes buscar o filtrar por ellos dentro del chat.
-- Máximo `max_individual_alerts` alertas con foto por corrida (las de mayor descuento). El resto va en **un** mensaje resumen; lo que no entra se envía en la siguiente corrida.
+- Por corrida: `max_individual_alerts` alertas con foto (repartidas entre categorías) y el resto, hasta `digest_max_items`, en **resúmenes por categoría** de hasta 30 ofertas cada uno. Lo que no entra se envía en la siguiente corrida.
 - **Temas (opcional):** si conviertes el chat en un grupo con Temas, pon el `thread_id` de cada tema en `telegram.groups` y las alertas se separan solas.
 - Si 3 corridas seguidas no obtienen datos (bloqueo o cambio de la web), llega un aviso ⚠️ silencioso.
 
