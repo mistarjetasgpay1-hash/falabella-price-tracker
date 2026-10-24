@@ -1,0 +1,4745 @@
+{
+ "version": 2,
+ "updated_at": "2026-10-24T20:02:01+00:00",
+ "meta": {
+  "scraper": {
+   "cursors": {
+    "Tecnologia": 11,
+    "Celulares": 5,
+    "Electrohogar": 11,
+    "ModaMujer": 11,
+    "ModaHombre": 11,
+    "ModaInfantil": 11,
+    "Zapatillas": 11,
+    "Accesorios": 11,
+    "Deportes": 11,
+    "Jugueteria": 11,
+    "MundoBebe": 11,
+    "Dormitorio": 11,
+    "Decoracion": 11,
+    "Muebles": 11,
+    "Cocina": 6,
+    "Perfumes": 11,
+    "Maquillaje": 11,
+    "BellezaHigiene": 11,
+    "AlimentosBebidas": 11,
+    "AseoLimpieza": 11,
+    "Mascotas": 7,
+    "DescuentosCMR": 11
+   }
+  },
+  "failure_streak": 0
+ },
+ "entries": {
+  "falabella:1100001001": {
+   "price": 103.9,
+   "discount": 54.59,
+   "first_seen": "2026-10-24T18:50:37+00:00",
+   "notified_at": "2026-10-24T18:50:37+00:00"
+  },
+  "falabella:1100001246": {
+   "price": 10105.7,
+   "discount": 59.02,
+   "first_seen": "2026-10-24T19:19:58+00:00",
+   "notified_at": "2026-10-24T19:19:58+00:00"
+  },
+  "falabella:113341262": {
+   "price": 34.9,
+   "discount": 56.32,
+   "first_seen": "2026-10-24T20:01:37+00:00",
+   "notified_at": "2026-10-24T20:01:37+00:00"
+  },
+  "falabella:113341409": {
+   "price": 34.9,
+   "discount": 56.32,
+   "first_seen": "2026-10-24T20:01:37+00:00",
+   "notified_at": "2026-10-24T20:01:37+00:00"
+  },
+  "falabella:114022498": {
+   "price": 19.9,
+   "discount": 50.13,
+   "first_seen": "2026-10-24T19:21:38+00:00",
+   "notified_at": "2026-10-24T19:21:38+00:00"
+  },
+  "falabella:114022620": {
+   "price": 59.9,
+   "discount": 49.66,
+   "first_seen": "2026-10-24T19:21:38+00:00",
+   "notified_at": "2026-10-24T19:21:38+00:00"
+  },
+  "falabella:117287363": {
+   "price": 339.0,
+   "discount": 62.29,
+   "first_seen": "2026-10-24T18:06:00+00:00",
+   "notified_at": "2026-10-24T18:06:00+00:00"
+  },
+  "falabella:120542445": {
+   "price": 1099.0,
+   "discount": 50.02,
+   "first_seen": "2026-10-24T19:21:14+00:00",
+   "notified_at": "2026-10-24T19:21:14+00:00"
+  },
+  "falabella:123124632": {
+   "price": 299.0,
+   "discount": 50.08,
+   "first_seen": "2026-10-24T18:50:40+00:00",
+   "notified_at": "2026-10-24T18:50:40+00:00"
+  },
+  "falabella:123125102": {
+   "price": 199.0,
+   "discount": 50.13,
+   "first_seen": "2026-10-24T18:05:39+00:00",
+   "notified_at": "2026-10-24T18:05:39+00:00"
+  },
+  "falabella:12491873": {
+   "price": 169.0,
+   "discount": 57.64,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:127280510": {
+   "price": 799.0,
+   "discount": 62.65,
+   "first_seen": "2026-10-24T19:20:43+00:00",
+   "notified_at": "2026-10-24T19:20:43+00:00"
+  },
+  "falabella:12838618": {
+   "price": 129.0,
+   "discount": 52.04,
+   "first_seen": "2026-10-24T18:50:37+00:00",
+   "notified_at": "2026-10-24T18:50:37+00:00"
+  },
+  "falabella:129956711": {
+   "price": 9.9,
+   "discount": 50.25,
+   "first_seen": "2026-10-24T20:01:51+00:00",
+   "notified_at": "2026-10-24T20:01:51+00:00"
+  },
+  "falabella:130085851": {
+   "price": 229.0,
+   "discount": 52.19,
+   "first_seen": "2026-10-24T18:05:39+00:00",
+   "notified_at": "2026-10-24T18:05:39+00:00"
+  },
+  "falabella:130468082": {
+   "price": 229.0,
+   "discount": 54.11,
+   "first_seen": "2026-10-24T18:05:39+00:00",
+   "notified_at": "2026-10-24T18:05:39+00:00"
+  },
+  "falabella:130468160": {
+   "price": 349.0,
+   "discount": 56.32,
+   "first_seen": "2026-10-24T18:05:39+00:00",
+   "notified_at": "2026-10-24T18:05:39+00:00"
+  },
+  "falabella:130504129": {
+   "price": 89.9,
+   "discount": 54.82,
+   "first_seen": "2026-10-24T18:05:39+00:00",
+   "notified_at": "2026-10-24T18:05:39+00:00"
+  },
+  "falabella:13128553": {
+   "price": 4499.0,
+   "discount": 50.01,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:131742351": {
+   "price": 29.9,
+   "discount": 50.08,
+   "first_seen": "2026-10-24T19:21:31+00:00",
+   "notified_at": "2026-10-24T19:21:31+00:00"
+  },
+  "falabella:132622334": {
+   "price": 10.9,
+   "discount": 56.22,
+   "first_seen": "2026-10-24T19:21:18+00:00",
+   "notified_at": "2026-10-24T19:21:18+00:00"
+  },
+  "falabella:132752823": {
+   "price": 19.9,
+   "discount": 50.13,
+   "first_seen": "2026-10-24T19:21:21+00:00",
+   "notified_at": "2026-10-24T19:21:21+00:00"
+  },
+  "falabella:132836453": {
+   "price": 49.9,
+   "discount": 49.6,
+   "first_seen": "2026-10-24T19:21:31+00:00",
+   "notified_at": "2026-10-24T19:21:31+00:00"
+  },
+  "falabella:133416090": {
+   "price": 1649.0,
+   "discount": 50.02,
+   "first_seen": "2026-10-24T18:50:30+00:00",
+   "notified_at": "2026-10-24T18:50:30+00:00"
+  },
+  "falabella:138440996": {
+   "price": 219.0,
+   "discount": 56.11,
+   "first_seen": "2026-10-24T18:05:39+00:00",
+   "notified_at": "2026-10-24T18:05:39+00:00"
+  },
+  "falabella:138441321": {
+   "price": 349.0,
+   "discount": 56.32,
+   "first_seen": "2026-10-24T18:05:39+00:00",
+   "notified_at": "2026-10-24T18:05:39+00:00"
+  },
+  "falabella:139686907": {
+   "price": 12.9,
+   "discount": 56.86,
+   "first_seen": "2026-10-24T19:21:18+00:00",
+   "notified_at": "2026-10-24T19:21:18+00:00"
+  },
+  "falabella:139686941": {
+   "price": 29.9,
+   "discount": 53.93,
+   "first_seen": "2026-10-24T18:50:40+00:00",
+   "notified_at": "2026-10-24T18:50:40+00:00"
+  },
+  "falabella:140121026": {
+   "price": 39.9,
+   "discount": 50.06,
+   "first_seen": "2026-10-24T18:50:40+00:00",
+   "notified_at": "2026-10-24T18:50:40+00:00"
+  },
+  "falabella:140121033": {
+   "price": 39.9,
+   "discount": 50.06,
+   "first_seen": "2026-10-24T18:50:40+00:00",
+   "notified_at": "2026-10-24T18:50:40+00:00"
+  },
+  "falabella:140289670": {
+   "price": 99.9,
+   "discount": 56.38,
+   "first_seen": "2026-10-24T18:50:40+00:00",
+   "notified_at": "2026-10-24T18:50:40+00:00"
+  },
+  "falabella:140762163": {
+   "price": 749.0,
+   "discount": 55.92,
+   "first_seen": "2026-10-24T19:21:14+00:00",
+   "notified_at": "2026-10-24T19:21:14+00:00"
+  },
+  "falabella:141055363": {
+   "price": 349.0,
+   "discount": 56.37,
+   "first_seen": "2026-10-24T20:01:37+00:00",
+   "notified_at": "2026-10-24T20:01:37+00:00"
+  },
+  "falabella:141055396": {
+   "price": 179.0,
+   "discount": 50.26,
+   "first_seen": "2026-10-24T19:21:14+00:00",
+   "notified_at": "2026-10-24T19:21:14+00:00"
+  },
+  "falabella:14227643": {
+   "price": 129.0,
+   "discount": 50.19,
+   "first_seen": "2026-10-24T20:01:54+00:00",
+   "notified_at": "2026-10-24T20:01:54+00:00"
+  },
+  "falabella:143325661": {
+   "price": 9.9,
+   "discount": 50.25,
+   "first_seen": "2026-10-24T20:01:51+00:00",
+   "notified_at": "2026-10-24T20:01:51+00:00"
+  },
+  "falabella:144288599": {
+   "price": 8.9,
+   "discount": 50.28,
+   "first_seen": "2026-10-24T20:01:47+00:00",
+   "notified_at": "2026-10-24T20:01:47+00:00"
+  },
+  "falabella:14456922": {
+   "price": 69.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T19:21:11+00:00",
+   "notified_at": "2026-10-24T19:21:11+00:00"
+  },
+  "falabella:144798234": {
+   "price": 139.0,
+   "discount": 53.51,
+   "first_seen": "2026-10-24T19:21:31+00:00",
+   "notified_at": "2026-10-24T19:21:31+00:00"
+  },
+  "falabella:144798238": {
+   "price": 54.9,
+   "discount": 72.41,
+   "first_seen": "2026-10-24T19:19:15+00:00",
+   "notified_at": "2026-10-24T19:19:15+00:00"
+  },
+  "falabella:144798248": {
+   "price": 219.0,
+   "discount": 63.44,
+   "first_seen": "2026-10-24T18:49:24+00:00",
+   "notified_at": "2026-10-24T18:49:24+00:00"
+  },
+  "falabella:144798250": {
+   "price": 54.9,
+   "discount": 72.41,
+   "first_seen": "2026-10-24T18:03:58+00:00",
+   "notified_at": "2026-10-24T18:03:58+00:00"
+  },
+  "falabella:144798276": {
+   "price": 54.9,
+   "discount": 72.41,
+   "first_seen": "2026-10-24T19:20:28+00:00",
+   "notified_at": "2026-10-24T19:20:28+00:00"
+  },
+  "falabella:145418635": {
+   "price": 19.9,
+   "discount": 66.78,
+   "first_seen": "2026-10-24T19:59:37+00:00",
+   "notified_at": "2026-10-24T19:59:37+00:00"
+  },
+  "falabella:14575389": {
+   "price": 1699.0,
+   "discount": 70.7,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:147249464": {
+   "price": 2.9,
+   "discount": 85.43,
+   "first_seen": "2026-10-24T19:59:16+00:00",
+   "notified_at": "2026-10-24T19:59:16+00:00"
+  },
+  "falabella:148075452": {
+   "price": 16.9,
+   "discount": 57.64,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:14828942": {
+   "price": 159.0,
+   "discount": 53.1,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:151028693": {
+   "price": 39.9,
+   "discount": 60.06,
+   "first_seen": "2026-10-24T20:00:24+00:00",
+   "notified_at": "2026-10-24T20:00:24+00:00"
+  },
+  "falabella:15126865": {
+   "price": 129.0,
+   "discount": 52.04,
+   "first_seen": "2026-10-24T18:05:32+00:00",
+   "notified_at": "2026-10-24T18:05:32+00:00"
+  },
+  "falabella:152369081": {
+   "price": 2.9,
+   "discount": 70.71,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:154995078": {
+   "price": 379.0,
+   "discount": 52.62,
+   "first_seen": "2026-10-24T18:04:44+00:00",
+   "notified_at": "2026-10-24T18:04:44+00:00"
+  },
+  "falabella:15675595": {
+   "price": 209.0,
+   "discount": 51.28,
+   "first_seen": "2026-10-24T18:05:32+00:00",
+   "notified_at": "2026-10-24T18:05:32+00:00"
+  },
+  "falabella:15894668": {
+   "price": 159.0,
+   "discount": 54.44,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:15894669": {
+   "price": 159.0,
+   "discount": 54.44,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:16409457": {
+   "price": 499.0,
+   "discount": 54.6,
+   "first_seen": "2026-10-24T19:21:28+00:00",
+   "notified_at": "2026-10-24T19:21:28+00:00"
+  },
+  "falabella:16514183": {
+   "price": 1059.0,
+   "discount": 51.84,
+   "first_seen": "2026-10-24T19:21:35+00:00",
+   "notified_at": "2026-10-24T19:21:35+00:00"
+  },
+  "falabella:16721930": {
+   "price": 139.0,
+   "discount": 57.75,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:16936237": {
+   "price": 1759.0,
+   "discount": 52.45,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:16936238": {
+   "price": 1799.0,
+   "discount": 59.1,
+   "first_seen": "2026-10-24T18:05:43+00:00",
+   "notified_at": "2026-10-24T18:05:43+00:00"
+  },
+  "falabella:16936239": {
+   "price": 2399.0,
+   "discount": 52.95,
+   "first_seen": "2026-10-24T18:05:43+00:00",
+   "notified_at": "2026-10-24T18:05:43+00:00"
+  },
+  "falabella:17039263": {
+   "price": 119.0,
+   "discount": 52.21,
+   "first_seen": "2026-10-24T19:21:25+00:00",
+   "notified_at": "2026-10-24T19:21:25+00:00"
+  },
+  "falabella:17117699": {
+   "price": 29.9,
+   "discount": 50.08,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:17224015": {
+   "price": 1229.0,
+   "discount": 59.02,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:17250053": {
+   "price": 299.0,
+   "discount": 70.07,
+   "first_seen": "2026-10-24T18:50:23+00:00",
+   "notified_at": "2026-10-24T18:50:23+00:00"
+  },
+  "falabella:17578772": {
+   "price": 369.0,
+   "discount": 53.82,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:17578778": {
+   "price": 129.0,
+   "discount": 55.36,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:17578779": {
+   "price": 129.0,
+   "discount": 55.36,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:17673676": {
+   "price": 134.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:37+00:00",
+   "notified_at": "2026-10-24T18:50:37+00:00"
+  },
+  "falabella:17693404": {
+   "price": 1099.0,
+   "discount": 50.02,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:17714769": {
+   "price": 14.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:17714779": {
+   "price": 14.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:17714799": {
+   "price": 14.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:17993160": {
+   "price": 1599.0,
+   "discount": 50.33,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:18009431": {
+   "price": 599.0,
+   "discount": 53.53,
+   "first_seen": "2026-10-24T20:01:40+00:00",
+   "notified_at": "2026-10-24T20:01:40+00:00"
+  },
+  "falabella:18009448": {
+   "price": 399.0,
+   "discount": 51.87,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:18009457": {
+   "price": 899.0,
+   "discount": 49.75,
+   "first_seen": "2026-10-24T19:21:28+00:00",
+   "notified_at": "2026-10-24T19:21:28+00:00"
+  },
+  "falabella:18009481": {
+   "price": 1049.0,
+   "discount": 50.02,
+   "first_seen": "2026-10-24T20:01:40+00:00",
+   "notified_at": "2026-10-24T20:01:40+00:00"
+  },
+  "falabella:18009482": {
+   "price": 1299.0,
+   "discount": 50.59,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:18039660": {
+   "price": 1699.0,
+   "discount": 50.01,
+   "first_seen": "2026-10-24T19:21:35+00:00",
+   "notified_at": "2026-10-24T19:21:35+00:00"
+  },
+  "falabella:18170158": {
+   "price": 69.0,
+   "discount": 65.33,
+   "first_seen": "2026-10-24T19:19:38+00:00",
+   "notified_at": "2026-10-24T19:19:38+00:00"
+  },
+  "falabella:18229008": {
+   "price": 199.0,
+   "discount": 50.13,
+   "first_seen": "2026-10-24T19:21:25+00:00",
+   "notified_at": "2026-10-24T19:21:25+00:00"
+  },
+  "falabella:18245482": {
+   "price": 849.0,
+   "discount": 50.03,
+   "first_seen": "2026-10-24T20:01:33+00:00",
+   "notified_at": "2026-10-24T20:01:33+00:00"
+  },
+  "falabella:18304696": {
+   "price": 139.0,
+   "discount": 57.75,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:18304724": {
+   "price": 89.0,
+   "discount": 55.28,
+   "first_seen": "2026-10-24T20:01:22+00:00",
+   "notified_at": "2026-10-24T20:01:22+00:00"
+  },
+  "falabella:18358462": {
+   "price": 229.0,
+   "discount": 52.19,
+   "first_seen": "2026-10-24T18:50:30+00:00",
+   "notified_at": "2026-10-24T18:50:30+00:00"
+  },
+  "falabella:18358464": {
+   "price": 349.0,
+   "discount": 53.4,
+   "first_seen": "2026-10-24T18:50:30+00:00",
+   "notified_at": "2026-10-24T18:50:30+00:00"
+  },
+  "falabella:18358466": {
+   "price": 99.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:18358467": {
+   "price": 299.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:18358468": {
+   "price": 699.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:18358470": {
+   "price": 149.0,
+   "discount": 51.78,
+   "first_seen": "2026-10-24T18:50:30+00:00",
+   "notified_at": "2026-10-24T18:50:30+00:00"
+  },
+  "falabella:18543338": {
+   "price": 14.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:18620560": {
+   "price": 69.0,
+   "discount": 53.69,
+   "first_seen": "2026-10-24T20:01:44+00:00",
+   "notified_at": "2026-10-24T20:01:44+00:00"
+  },
+  "falabella:18620561": {
+   "price": 209.0,
+   "discount": 50.23,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:18856654": {
+   "price": 2399.0,
+   "discount": 58.63,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:18960901": {
+   "price": 14.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:18962881": {
+   "price": 749.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:19038624": {
+   "price": 949.0,
+   "discount": 50.03,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:19038625": {
+   "price": 1049.0,
+   "discount": 50.02,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:19038641": {
+   "price": 4199.0,
+   "discount": 53.08,
+   "first_seen": "2026-10-24T18:05:43+00:00",
+   "notified_at": "2026-10-24T18:05:43+00:00"
+  },
+  "falabella:19134083": {
+   "price": 799.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:19135689": {
+   "price": 729.0,
+   "discount": 51.37,
+   "first_seen": "2026-10-24T18:05:43+00:00",
+   "notified_at": "2026-10-24T18:05:43+00:00"
+  },
+  "falabella:19135690": {
+   "price": 829.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:19141180": {
+   "price": 69.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T19:21:11+00:00",
+   "notified_at": "2026-10-24T19:21:11+00:00"
+  },
+  "falabella:19156647": {
+   "price": 299.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:19252951": {
+   "price": 189.0,
+   "discount": 66.78,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:19329179": {
+   "price": 24.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:19353473": {
+   "price": 299.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:19404699": {
+   "price": 159.0,
+   "discount": 51.67,
+   "first_seen": "2026-10-24T18:50:37+00:00",
+   "notified_at": "2026-10-24T18:50:37+00:00"
+  },
+  "falabella:19410200": {
+   "price": 399.0,
+   "discount": 50.06,
+   "first_seen": "2026-10-24T18:50:37+00:00",
+   "notified_at": "2026-10-24T18:50:37+00:00"
+  },
+  "falabella:19449005": {
+   "price": 179.0,
+   "discount": 52.77,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:19493874": {
+   "price": 19.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:19536269": {
+   "price": 59.9,
+   "discount": 49.66,
+   "first_seen": "2026-10-24T19:21:25+00:00",
+   "notified_at": "2026-10-24T19:21:25+00:00"
+  },
+  "falabella:19545133": {
+   "price": 649.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:19590824": {
+   "price": 1699.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:19609922": {
+   "price": 99.0,
+   "discount": 50.25,
+   "first_seen": "2026-10-24T18:05:32+00:00",
+   "notified_at": "2026-10-24T18:05:32+00:00"
+  },
+  "falabella:19653574": {
+   "price": 99.9,
+   "discount": 60.02,
+   "first_seen": "2026-10-24T20:01:30+00:00",
+   "notified_at": "2026-10-24T20:01:30+00:00"
+  },
+  "falabella:19669140": {
+   "price": 1529.0,
+   "discount": 50.66,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:19740915": {
+   "price": 899.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:19743965": {
+   "price": 14.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:19749011": {
+   "price": 209.0,
+   "discount": 53.45,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:19765425": {
+   "price": 189.0,
+   "discount": 52.63,
+   "first_seen": "2026-10-24T18:05:32+00:00",
+   "notified_at": "2026-10-24T18:05:32+00:00"
+  },
+  "falabella:19824318": {
+   "price": 129.0,
+   "discount": 53.76,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:19824486": {
+   "price": 119.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:19824491": {
+   "price": 139.0,
+   "discount": 56.43,
+   "first_seen": "2026-10-24T18:05:57+00:00",
+   "notified_at": "2026-10-24T18:05:57+00:00"
+  },
+  "falabella:19831386": {
+   "price": 419.0,
+   "discount": 58.06,
+   "first_seen": "2026-10-24T18:50:30+00:00",
+   "notified_at": "2026-10-24T18:50:30+00:00"
+  },
+  "falabella:19834195": {
+   "price": 229.0,
+   "discount": 55.01,
+   "first_seen": "2026-10-24T19:21:25+00:00",
+   "notified_at": "2026-10-24T19:21:25+00:00"
+  },
+  "falabella:19877647": {
+   "price": 74.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T19:21:11+00:00",
+   "notified_at": "2026-10-24T19:21:11+00:00"
+  },
+  "falabella:19888950": {
+   "price": 14.98,
+   "discount": 74.99,
+   "first_seen": "2026-10-24T18:48:48+00:00",
+   "notified_at": "2026-10-24T18:48:48+00:00"
+  },
+  "falabella:19894712": {
+   "price": 169.0,
+   "discount": 67.44,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:19924539": {
+   "price": 119.0,
+   "discount": 52.21,
+   "first_seen": "2026-10-24T18:05:32+00:00",
+   "notified_at": "2026-10-24T18:05:32+00:00"
+  },
+  "falabella:19928085": {
+   "price": 129.0,
+   "discount": 53.76,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:19928110": {
+   "price": 119.0,
+   "discount": 60.2,
+   "first_seen": "2026-10-24T20:01:33+00:00",
+   "notified_at": "2026-10-24T20:01:33+00:00"
+  },
+  "falabella:19928128": {
+   "price": 119.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:19928133": {
+   "price": 119.0,
+   "discount": 60.2,
+   "first_seen": "2026-10-24T20:01:33+00:00",
+   "notified_at": "2026-10-24T20:01:33+00:00"
+  },
+  "falabella:19928141": {
+   "price": 139.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:19928894": {
+   "price": 69.65,
+   "discount": 65.0,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:19982988": {
+   "price": 19.96,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:49:47+00:00",
+   "notified_at": "2026-10-24T18:49:47+00:00"
+  },
+  "falabella:19992199": {
+   "price": 94.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T20:01:54+00:00",
+   "notified_at": "2026-10-24T20:01:54+00:00"
+  },
+  "falabella:19992200": {
+   "price": 89.0,
+   "discount": 55.28,
+   "first_seen": "2026-10-24T18:50:37+00:00",
+   "notified_at": "2026-10-24T18:50:37+00:00"
+  },
+  "falabella:20016435": {
+   "price": 549.0,
+   "discount": 50.05,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:20016436": {
+   "price": 649.0,
+   "discount": 50.04,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:20065202": {
+   "price": 179.0,
+   "discount": 55.14,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:20067227": {
+   "price": 109.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T20:01:54+00:00",
+   "notified_at": "2026-10-24T20:01:54+00:00"
+  },
+  "falabella:20081752": {
+   "price": 39.9,
+   "discount": 53.0,
+   "first_seen": "2026-10-24T18:50:40+00:00",
+   "notified_at": "2026-10-24T18:50:40+00:00"
+  },
+  "falabella:20082868": {
+   "price": 279.0,
+   "discount": 51.81,
+   "first_seen": "2026-10-24T18:05:43+00:00",
+   "notified_at": "2026-10-24T18:05:43+00:00"
+  },
+  "falabella:20156895": {
+   "price": 1439.0,
+   "discount": 50.36,
+   "first_seen": "2026-10-24T18:05:43+00:00",
+   "notified_at": "2026-10-24T18:05:43+00:00"
+  },
+  "falabella:20190316": {
+   "price": 229.0,
+   "discount": 51.17,
+   "first_seen": "2026-10-24T18:50:37+00:00",
+   "notified_at": "2026-10-24T18:50:37+00:00"
+  },
+  "falabella:20190322": {
+   "price": 109.0,
+   "discount": 52.4,
+   "first_seen": "2026-10-24T19:21:25+00:00",
+   "notified_at": "2026-10-24T19:21:25+00:00"
+  },
+  "falabella:20212391": {
+   "price": 79.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T20:01:33+00:00",
+   "notified_at": "2026-10-24T20:01:33+00:00"
+  },
+  "falabella:20218044": {
+   "price": 899.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:20218048": {
+   "price": 369.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:20226894": {
+   "price": 779.0,
+   "discount": 54.15,
+   "first_seen": "2026-10-24T20:00:49+00:00",
+   "notified_at": "2026-10-24T20:00:49+00:00"
+  },
+  "falabella:20226895": {
+   "price": 919.0,
+   "discount": 54.03,
+   "first_seen": "2026-10-24T18:05:43+00:00",
+   "notified_at": "2026-10-24T18:05:43+00:00"
+  },
+  "falabella:20226940": {
+   "price": 2039.0,
+   "discount": 50.26,
+   "first_seen": "2026-10-24T20:01:40+00:00",
+   "notified_at": "2026-10-24T20:01:40+00:00"
+  },
+  "falabella:20229025": {
+   "price": 74.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T20:01:33+00:00",
+   "notified_at": "2026-10-24T20:01:33+00:00"
+  },
+  "falabella:20251061": {
+   "price": 349.0,
+   "discount": 56.32,
+   "first_seen": "2026-10-24T19:20:56+00:00",
+   "notified_at": "2026-10-24T19:20:56+00:00"
+  },
+  "falabella:20251860": {
+   "price": 2649.0,
+   "discount": 54.32,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:20251861": {
+   "price": 1799.0,
+   "discount": 55.46,
+   "first_seen": "2026-10-24T18:49:39+00:00",
+   "notified_at": "2026-10-24T18:49:39+00:00"
+  },
+  "falabella:20251862": {
+   "price": 2349.0,
+   "discount": 52.63,
+   "first_seen": "2026-10-24T19:20:05+00:00",
+   "notified_at": "2026-10-24T19:20:05+00:00"
+  },
+  "falabella:20255945": {
+   "price": 139.0,
+   "discount": 59.0,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:20289715": {
+   "price": 74.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T20:01:33+00:00",
+   "notified_at": "2026-10-24T20:01:33+00:00"
+  },
+  "falabella:20291509": {
+   "price": 69.0,
+   "discount": 50.36,
+   "first_seen": "2026-10-24T20:01:37+00:00",
+   "notified_at": "2026-10-24T20:01:37+00:00"
+  },
+  "falabella:20296439": {
+   "price": 169.0,
+   "discount": 50.15,
+   "first_seen": "2026-10-24T18:05:32+00:00",
+   "notified_at": "2026-10-24T18:05:32+00:00"
+  },
+  "falabella:20297673": {
+   "price": 219.0,
+   "discount": 56.11,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:20405851": {
+   "price": 139.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:20405859": {
+   "price": 129.0,
+   "discount": 53.76,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:20414340": {
+   "price": 449.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:20434165": {
+   "price": 149.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:27+00:00",
+   "notified_at": "2026-10-24T18:50:27+00:00"
+  },
+  "falabella:20436843": {
+   "price": 39.9,
+   "discount": 50.06,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:20441612": {
+   "price": 149.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T19:21:11+00:00",
+   "notified_at": "2026-10-24T19:21:11+00:00"
+  },
+  "falabella:20454272": {
+   "price": 139.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:20454488": {
+   "price": 5699.0,
+   "discount": 56.16,
+   "first_seen": "2026-10-24T18:50:44+00:00",
+   "notified_at": "2026-10-24T18:50:44+00:00"
+  },
+  "falabella:20454537": {
+   "price": 1299.0,
+   "discount": 53.92,
+   "first_seen": "2026-10-24T20:01:40+00:00",
+   "notified_at": "2026-10-24T20:01:40+00:00"
+  },
+  "falabella:20454538": {
+   "price": 1599.0,
+   "discount": 53.77,
+   "first_seen": "2026-10-24T20:01:40+00:00",
+   "notified_at": "2026-10-24T20:01:40+00:00"
+  },
+  "falabella:20454557": {
+   "price": 1299.0,
+   "discount": 53.92,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:20454558": {
+   "price": 1499.0,
+   "discount": 55.64,
+   "first_seen": "2026-10-24T18:05:43+00:00",
+   "notified_at": "2026-10-24T18:05:43+00:00"
+  },
+  "falabella:20461180": {
+   "price": 99.0,
+   "discount": 60.24,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:20467457": {
+   "price": 29.9,
+   "discount": 50.08,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:20498051": {
+   "price": 1299.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:20521843": {
+   "price": 124.5,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:20540085": {
+   "price": 109.0,
+   "discount": 74.59,
+   "first_seen": "2026-10-24T19:20:20+00:00",
+   "notified_at": "2026-10-24T19:20:20+00:00"
+  },
+  "falabella:20553146": {
+   "price": 39.9,
+   "discount": 50.06,
+   "first_seen": "2026-10-24T20:01:33+00:00",
+   "notified_at": "2026-10-24T20:01:33+00:00"
+  },
+  "falabella:20556487": {
+   "price": 95.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:20556491": {
+   "price": 89.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:20556997": {
+   "price": 574.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:20604228": {
+   "price": 59.9,
+   "discount": 50.04,
+   "first_seen": "2026-10-24T19:21:18+00:00",
+   "notified_at": "2026-10-24T19:21:18+00:00"
+  },
+  "falabella:20612017": {
+   "price": 774.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:20612400": {
+   "price": 149.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T20:01:54+00:00",
+   "notified_at": "2026-10-24T20:01:54+00:00"
+  },
+  "falabella:20614309": {
+   "price": 112.45,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:20648351": {
+   "price": 139.0,
+   "discount": 56.43,
+   "first_seen": "2026-10-24T18:50:27+00:00",
+   "notified_at": "2026-10-24T18:50:27+00:00"
+  },
+  "falabella:20651883": {
+   "price": 29.9,
+   "discount": 50.08,
+   "first_seen": "2026-10-24T20:01:51+00:00",
+   "notified_at": "2026-10-24T20:01:51+00:00"
+  },
+  "falabella:20651889": {
+   "price": 14.9,
+   "discount": 50.17,
+   "first_seen": "2026-10-24T18:50:40+00:00",
+   "notified_at": "2026-10-24T18:50:40+00:00"
+  },
+  "falabella:20661330": {
+   "price": 39.9,
+   "discount": 50.06,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:20682827": {
+   "price": 6.9,
+   "discount": 76.92,
+   "first_seen": "2026-10-24T18:48:34+00:00",
+   "notified_at": "2026-10-24T18:48:34+00:00"
+  },
+  "falabella:20682829": {
+   "price": 6.9,
+   "discount": 76.92,
+   "first_seen": "2026-10-24T18:05:18+00:00",
+   "notified_at": "2026-10-24T18:05:18+00:00"
+  },
+  "falabella:20723370": {
+   "price": 1399.0,
+   "discount": 50.02,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:20726565": {
+   "price": 499.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:20787440": {
+   "price": 624.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:20829356": {
+   "price": 2849.0,
+   "discount": 52.51,
+   "first_seen": "2026-10-24T18:05:43+00:00",
+   "notified_at": "2026-10-24T18:05:43+00:00"
+  },
+  "falabella:20829357": {
+   "price": 2599.0,
+   "discount": 50.95,
+   "first_seen": "2026-10-24T19:21:28+00:00",
+   "notified_at": "2026-10-24T19:21:28+00:00"
+  },
+  "falabella:20842036": {
+   "price": 14.9,
+   "discount": 70.14,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:20846489": {
+   "price": 19.9,
+   "discount": 50.13,
+   "first_seen": "2026-10-24T19:21:18+00:00",
+   "notified_at": "2026-10-24T19:21:18+00:00"
+  },
+  "falabella:20848665": {
+   "price": 1349.0,
+   "discount": 50.93,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:20848710": {
+   "price": 1429.0,
+   "discount": 52.35,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:20855573": {
+   "price": 649.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T20:01:58+00:00",
+   "notified_at": "2026-10-24T20:01:58+00:00"
+  },
+  "falabella:20867954": {
+   "price": 289.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:37+00:00",
+   "notified_at": "2026-10-24T18:50:37+00:00"
+  },
+  "falabella:20883411": {
+   "price": 89.0,
+   "discount": 55.28,
+   "first_seen": "2026-10-24T20:01:33+00:00",
+   "notified_at": "2026-10-24T20:01:33+00:00"
+  },
+  "falabella:20884142": {
+   "price": 749.0,
+   "discount": 55.92,
+   "first_seen": "2026-10-24T19:21:14+00:00",
+   "notified_at": "2026-10-24T19:21:14+00:00"
+  },
+  "falabella:20891269": {
+   "price": 49.9,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:20893352": {
+   "price": 119.9,
+   "discount": 60.02,
+   "first_seen": "2026-10-24T18:05:39+00:00",
+   "notified_at": "2026-10-24T18:05:39+00:00"
+  },
+  "falabella:20907734": {
+   "price": 89.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:37+00:00",
+   "notified_at": "2026-10-24T18:50:37+00:00"
+  },
+  "falabella:20919624": {
+   "price": 20.9,
+   "discount": 70.1,
+   "first_seen": "2026-10-24T19:19:23+00:00",
+   "notified_at": "2026-10-24T19:19:23+00:00"
+  },
+  "falabella:20930692": {
+   "price": 119.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:20930749": {
+   "price": 229.0,
+   "discount": 50.11,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:20930761": {
+   "price": 149.0,
+   "discount": 50.17,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:20937789": {
+   "price": 899.0,
+   "discount": 60.9,
+   "first_seen": "2026-10-24T19:21:14+00:00",
+   "notified_at": "2026-10-24T19:21:14+00:00"
+  },
+  "falabella:20964247": {
+   "price": 99.0,
+   "discount": 50.25,
+   "first_seen": "2026-10-24T20:01:54+00:00",
+   "notified_at": "2026-10-24T20:01:54+00:00"
+  },
+  "falabella:20977895": {
+   "price": 39.9,
+   "discount": 50.06,
+   "first_seen": "2026-10-24T19:21:18+00:00",
+   "notified_at": "2026-10-24T19:21:18+00:00"
+  },
+  "falabella:20979879": {
+   "price": 84.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T20:01:33+00:00",
+   "notified_at": "2026-10-24T20:01:33+00:00"
+  },
+  "falabella:20989013": {
+   "price": 79.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:21014695": {
+   "price": 149.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:21014774": {
+   "price": 119.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:21025123": {
+   "price": 299.0,
+   "discount": 53.93,
+   "first_seen": "2026-10-24T18:50:44+00:00",
+   "notified_at": "2026-10-24T18:50:44+00:00"
+  },
+  "falabella:21025124": {
+   "price": 449.0,
+   "discount": 50.06,
+   "first_seen": "2026-10-24T18:50:44+00:00",
+   "notified_at": "2026-10-24T18:50:44+00:00"
+  },
+  "falabella:21041832": {
+   "price": 99.0,
+   "discount": 50.25,
+   "first_seen": "2026-10-24T19:21:25+00:00",
+   "notified_at": "2026-10-24T19:21:25+00:00"
+  },
+  "falabella:21044289": {
+   "price": 31.45,
+   "discount": 55.01,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:21060246": {
+   "price": 114.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:21070440": {
+   "price": 179.0,
+   "discount": 52.77,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:21070442": {
+   "price": 199.0,
+   "discount": 55.68,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:21070443": {
+   "price": 179.0,
+   "discount": 52.77,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:21129157": {
+   "price": 20.9,
+   "discount": 70.1,
+   "first_seen": "2026-10-24T18:49:17+00:00",
+   "notified_at": "2026-10-24T18:49:17+00:00"
+  },
+  "falabella:21135757": {
+   "price": 44.9,
+   "discount": 62.55,
+   "first_seen": "2026-10-24T19:59:53+00:00",
+   "notified_at": "2026-10-24T19:59:53+00:00"
+  },
+  "falabella:21135975": {
+   "price": 49.9,
+   "discount": 50.05,
+   "first_seen": "2026-10-24T20:01:58+00:00",
+   "notified_at": "2026-10-24T20:01:58+00:00"
+  },
+  "falabella:21136023": {
+   "price": 59.9,
+   "discount": 50.04,
+   "first_seen": "2026-10-24T19:21:21+00:00",
+   "notified_at": "2026-10-24T19:21:21+00:00"
+  },
+  "falabella:21194615": {
+   "price": 179.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:37+00:00",
+   "notified_at": "2026-10-24T18:50:37+00:00"
+  },
+  "falabella:21199629": {
+   "price": 189.9,
+   "discount": 52.51,
+   "first_seen": "2026-10-24T18:06:04+00:00",
+   "notified_at": "2026-10-24T18:06:04+00:00"
+  },
+  "falabella:21207676": {
+   "price": 174.5,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:21207710": {
+   "price": 174.5,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:21207718": {
+   "price": 174.5,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:21207771": {
+   "price": 174.5,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:21211739": {
+   "price": 49.9,
+   "discount": 70.63,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:21211841": {
+   "price": 59.9,
+   "discount": 50.04,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:21214714": {
+   "price": 69.9,
+   "discount": 53.37,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:21215113": {
+   "price": 9.56,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:21215115": {
+   "price": 9.56,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:21215128": {
+   "price": 10.58,
+   "discount": 80.0,
+   "first_seen": "2026-10-24T18:03:12+00:00",
+   "notified_at": "2026-10-24T18:03:12+00:00"
+  },
+  "falabella:21215130": {
+   "price": 13.98,
+   "discount": 80.0,
+   "first_seen": "2026-10-24T18:05:01+00:00",
+   "notified_at": "2026-10-24T18:05:01+00:00"
+  },
+  "falabella:21218347": {
+   "price": 199.0,
+   "discount": 53.61,
+   "first_seen": "2026-10-24T18:50:37+00:00",
+   "notified_at": "2026-10-24T18:50:37+00:00"
+  },
+  "falabella:21218675": {
+   "price": 199.0,
+   "discount": 54.36,
+   "first_seen": "2026-10-24T19:21:25+00:00",
+   "notified_at": "2026-10-24T19:21:25+00:00"
+  },
+  "falabella:21218764": {
+   "price": 69.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T20:01:33+00:00",
+   "notified_at": "2026-10-24T20:01:33+00:00"
+  },
+  "falabella:21242457": {
+   "price": 144.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:37+00:00",
+   "notified_at": "2026-10-24T18:50:37+00:00"
+  },
+  "falabella:21242458": {
+   "price": 224.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:37+00:00",
+   "notified_at": "2026-10-24T18:50:37+00:00"
+  },
+  "falabella:21244246": {
+   "price": 89.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:21255517": {
+   "price": 39.9,
+   "discount": 60.06,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:21256953": {
+   "price": 32.9,
+   "discount": 70.06,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:21258221": {
+   "price": 289.0,
+   "discount": 50.93,
+   "first_seen": "2026-10-24T18:05:32+00:00",
+   "notified_at": "2026-10-24T18:05:32+00:00"
+  },
+  "falabella:21276809": {
+   "price": 49.9,
+   "discount": 58.38,
+   "first_seen": "2026-10-24T19:20:35+00:00",
+   "notified_at": "2026-10-24T19:20:35+00:00"
+  },
+  "falabella:21277826": {
+   "price": 79.9,
+   "discount": 52.97,
+   "first_seen": "2026-10-24T20:01:33+00:00",
+   "notified_at": "2026-10-24T20:01:33+00:00"
+  },
+  "falabella:21280852": {
+   "price": 849.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:21282895": {
+   "price": 114.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T19:21:11+00:00",
+   "notified_at": "2026-10-24T19:21:11+00:00"
+  },
+  "falabella:21285198": {
+   "price": 174.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:37+00:00",
+   "notified_at": "2026-10-24T18:50:37+00:00"
+  },
+  "falabella:21285666": {
+   "price": 19.9,
+   "discount": 50.13,
+   "first_seen": "2026-10-24T19:21:18+00:00",
+   "notified_at": "2026-10-24T19:21:18+00:00"
+  },
+  "falabella:21291089": {
+   "price": 159.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:21298487": {
+   "price": 29.9,
+   "discount": 50.08,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:21301654": {
+   "price": 49.9,
+   "discount": 58.38,
+   "first_seen": "2026-10-24T18:05:39+00:00",
+   "notified_at": "2026-10-24T18:05:39+00:00"
+  },
+  "falabella:21312534": {
+   "price": 179.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:21317522": {
+   "price": 67.96,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T20:01:33+00:00",
+   "notified_at": "2026-10-24T20:01:33+00:00"
+  },
+  "falabella:21325623": {
+   "price": 564.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:37+00:00",
+   "notified_at": "2026-10-24T18:50:37+00:00"
+  },
+  "falabella:21329338": {
+   "price": 349.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:34+00:00",
+   "notified_at": "2026-10-24T18:50:34+00:00"
+  },
+  "falabella:21329599": {
+   "price": 349.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:34+00:00",
+   "notified_at": "2026-10-24T18:50:34+00:00"
+  },
+  "falabella:21329635": {
+   "price": 264.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T19:21:11+00:00",
+   "notified_at": "2026-10-24T19:21:11+00:00"
+  },
+  "falabella:21335535": {
+   "price": 189.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T19:21:38+00:00",
+   "notified_at": "2026-10-24T19:21:38+00:00"
+  },
+  "falabella:21337520": {
+   "price": 34.9,
+   "discount": 50.07,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:21345016": {
+   "price": 9.9,
+   "discount": 87.47,
+   "first_seen": "2026-10-24T18:02:48+00:00",
+   "notified_at": "2026-10-24T18:02:48+00:00"
+  },
+  "falabella:21347101": {
+   "price": 69.9,
+   "discount": 61.15,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:21350846": {
+   "price": 64.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:21353248": {
+   "price": 59.0,
+   "discount": 54.26,
+   "first_seen": "2026-10-24T18:50:44+00:00",
+   "notified_at": "2026-10-24T18:50:44+00:00"
+  },
+  "falabella:21354350": {
+   "price": 22.9,
+   "discount": 71.34,
+   "first_seen": "2026-10-24T19:59:24+00:00",
+   "notified_at": "2026-10-24T19:59:24+00:00"
+  },
+  "falabella:21354357": {
+   "price": 22.9,
+   "discount": 71.34,
+   "first_seen": "2026-10-24T20:01:07+00:00",
+   "notified_at": "2026-10-24T20:01:07+00:00"
+  },
+  "falabella:21366321": {
+   "price": 59.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:51:05+00:00",
+   "notified_at": "2026-10-24T18:51:05+00:00"
+  },
+  "falabella:21379186": {
+   "price": 159.9,
+   "discount": 60.02,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:21391246": {
+   "price": 247.96,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:21398290": {
+   "price": 49.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T20:01:33+00:00",
+   "notified_at": "2026-10-24T20:01:33+00:00"
+  },
+  "falabella:21410122": {
+   "price": 59.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:51:05+00:00",
+   "notified_at": "2026-10-24T18:51:05+00:00"
+  },
+  "falabella:21410130": {
+   "price": 59.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:51:05+00:00",
+   "notified_at": "2026-10-24T18:51:05+00:00"
+  },
+  "falabella:21414075": {
+   "price": 699.9,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:21414089": {
+   "price": 719.9,
+   "discount": 50.35,
+   "first_seen": "2026-10-24T18:05:53+00:00",
+   "notified_at": "2026-10-24T18:05:53+00:00"
+  },
+  "falabella:21414094": {
+   "price": 399.9,
+   "discount": 50.01,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:21414103": {
+   "price": 449.9,
+   "discount": 50.01,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:21414309": {
+   "price": 649.9,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:21423609": {
+   "price": 24.9,
+   "discount": 58.43,
+   "first_seen": "2026-10-24T18:50:27+00:00",
+   "notified_at": "2026-10-24T18:50:27+00:00"
+  },
+  "falabella:21423630": {
+   "price": 19.9,
+   "discount": 60.12,
+   "first_seen": "2026-10-24T18:05:57+00:00",
+   "notified_at": "2026-10-24T18:05:57+00:00"
+  },
+  "falabella:21423632": {
+   "price": 24.9,
+   "discount": 50.1,
+   "first_seen": "2026-10-24T18:50:27+00:00",
+   "notified_at": "2026-10-24T18:50:27+00:00"
+  },
+  "falabella:21434266": {
+   "price": 129.0,
+   "discount": 56.99,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:21435588": {
+   "price": 179.9,
+   "discount": 60.01,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:21436255": {
+   "price": 549.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:21439911": {
+   "price": 139.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T20:01:33+00:00",
+   "notified_at": "2026-10-24T20:01:33+00:00"
+  },
+  "falabella:21453134": {
+   "price": 44.9,
+   "discount": 50.06,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:21465087": {
+   "price": 379.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:51:01+00:00",
+   "notified_at": "2026-10-24T18:51:01+00:00"
+  },
+  "falabella:21465108": {
+   "price": 329.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:51:01+00:00",
+   "notified_at": "2026-10-24T18:51:01+00:00"
+  },
+  "falabella:21465121": {
+   "price": 279.6,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:21465182": {
+   "price": 164.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:21465247": {
+   "price": 114.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:21474014": {
+   "price": 164.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:51:01+00:00",
+   "notified_at": "2026-10-24T18:51:01+00:00"
+  },
+  "falabella:21474090": {
+   "price": 129.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:51:01+00:00",
+   "notified_at": "2026-10-24T18:51:01+00:00"
+  },
+  "falabella:21476723": {
+   "price": 224.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:27+00:00",
+   "notified_at": "2026-10-24T18:50:27+00:00"
+  },
+  "falabella:21490896": {
+   "price": 59.96,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:50:27+00:00",
+   "notified_at": "2026-10-24T18:50:27+00:00"
+  },
+  "falabella:21490974": {
+   "price": 67.96,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:50:27+00:00",
+   "notified_at": "2026-10-24T18:50:27+00:00"
+  },
+  "falabella:21491019": {
+   "price": 84.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:27+00:00",
+   "notified_at": "2026-10-24T18:50:27+00:00"
+  },
+  "falabella:21499227": {
+   "price": 224.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:21499232": {
+   "price": 299.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:21499259": {
+   "price": 154.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:21499265": {
+   "price": 124.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:51:01+00:00",
+   "notified_at": "2026-10-24T18:51:01+00:00"
+  },
+  "falabella:21499281": {
+   "price": 199.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:51:01+00:00",
+   "notified_at": "2026-10-24T18:51:01+00:00"
+  },
+  "falabella:21499290": {
+   "price": 189.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:21499315": {
+   "price": 124.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:770584324": {
+   "price": 153.9,
+   "discount": 50.19,
+   "first_seen": "2026-10-24T20:01:44+00:00",
+   "notified_at": "2026-10-24T20:01:44+00:00"
+  },
+  "falabella:80000573": {
+   "price": 129.0,
+   "discount": 67.67,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:80007510": {
+   "price": 99.9,
+   "discount": 50.03,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:80007514": {
+   "price": 99.9,
+   "discount": 50.03,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:80007793": {
+   "price": 1299.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:80008068": {
+   "price": 1599.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:80011344": {
+   "price": 139.0,
+   "discount": 55.02,
+   "first_seen": "2026-10-24T18:50:37+00:00",
+   "notified_at": "2026-10-24T18:50:37+00:00"
+  },
+  "falabella:80016109": {
+   "price": 49.9,
+   "discount": 50.05,
+   "first_seen": "2026-10-24T18:50:40+00:00",
+   "notified_at": "2026-10-24T18:50:40+00:00"
+  },
+  "falabella:80016112": {
+   "price": 49.9,
+   "discount": 50.05,
+   "first_seen": "2026-10-24T18:50:40+00:00",
+   "notified_at": "2026-10-24T18:50:40+00:00"
+  },
+  "falabella:80016113": {
+   "price": 49.9,
+   "discount": 50.05,
+   "first_seen": "2026-10-24T18:50:40+00:00",
+   "notified_at": "2026-10-24T18:50:40+00:00"
+  },
+  "falabella:80018739": {
+   "price": 174.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:27+00:00",
+   "notified_at": "2026-10-24T18:50:27+00:00"
+  },
+  "falabella:80024404": {
+   "price": 74.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:51:01+00:00",
+   "notified_at": "2026-10-24T18:51:01+00:00"
+  },
+  "falabella:80024413": {
+   "price": 124.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:80024438": {
+   "price": 134.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:80024441": {
+   "price": 134.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:80026621": {
+   "price": 59.96,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:80026624": {
+   "price": 79.96,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:80026628": {
+   "price": 71.96,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:80028223": {
+   "price": 149.5,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:80029554": {
+   "price": 179.0,
+   "discount": 55.14,
+   "first_seen": "2026-10-24T18:50:37+00:00",
+   "notified_at": "2026-10-24T18:50:37+00:00"
+  },
+  "falabella:80033924": {
+   "price": 209.9,
+   "discount": 53.35,
+   "first_seen": "2026-10-24T18:05:39+00:00",
+   "notified_at": "2026-10-24T18:05:39+00:00"
+  },
+  "falabella:80047041": {
+   "price": 69.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:80047051": {
+   "price": 55.96,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:80047857": {
+   "price": 1349.0,
+   "discount": 50.93,
+   "first_seen": "2026-10-24T19:21:28+00:00",
+   "notified_at": "2026-10-24T19:21:28+00:00"
+  },
+  "falabella:80047879": {
+   "price": 74.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:51:01+00:00",
+   "notified_at": "2026-10-24T18:51:01+00:00"
+  },
+  "falabella:80047889": {
+   "price": 149.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:51:01+00:00",
+   "notified_at": "2026-10-24T18:51:01+00:00"
+  },
+  "falabella:80047890": {
+   "price": 124.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:51:01+00:00",
+   "notified_at": "2026-10-24T18:51:01+00:00"
+  },
+  "falabella:80047894": {
+   "price": 74.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:80048985": {
+   "price": 99.0,
+   "discount": 63.2,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:80050608": {
+   "price": 95.96,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:80050610": {
+   "price": 91.96,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:80053095": {
+   "price": 14.9,
+   "discount": 62.66,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:80064896": {
+   "price": 174.5,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:80068730": {
+   "price": 84.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:51:01+00:00",
+   "notified_at": "2026-10-24T18:51:01+00:00"
+  },
+  "falabella:80069255": {
+   "price": 1869.0,
+   "discount": 54.61,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:80069277": {
+   "price": 2799.0,
+   "discount": 60.12,
+   "first_seen": "2026-10-24T20:00:17+00:00",
+   "notified_at": "2026-10-24T20:00:17+00:00"
+  },
+  "falabella:80069307": {
+   "price": 1999.0,
+   "discount": 58.51,
+   "first_seen": "2026-10-24T18:05:43+00:00",
+   "notified_at": "2026-10-24T18:05:43+00:00"
+  },
+  "falabella:80082799": {
+   "price": 59.9,
+   "discount": 57.18,
+   "first_seen": "2026-10-24T18:05:57+00:00",
+   "notified_at": "2026-10-24T18:05:57+00:00"
+  },
+  "falabella:80082800": {
+   "price": 59.9,
+   "discount": 57.18,
+   "first_seen": "2026-10-24T18:05:57+00:00",
+   "notified_at": "2026-10-24T18:05:57+00:00"
+  },
+  "falabella:80090517": {
+   "price": 104.5,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:80091729": {
+   "price": 139.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:80160461": {
+   "price": 239.0,
+   "discount": 70.12,
+   "first_seen": "2026-10-24T18:49:04+00:00",
+   "notified_at": "2026-10-24T18:49:04+00:00"
+  },
+  "falabella:80163863": {
+   "price": 149.5,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:880406186": {
+   "price": 39.9,
+   "discount": 60.06,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:880808791": {
+   "price": 29.9,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:880878242": {
+   "price": 39.9,
+   "discount": 60.06,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:880937688": {
+   "price": 29.9,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:881103757": {
+   "price": 29.9,
+   "discount": 66.74,
+   "first_seen": "2026-10-24T18:05:57+00:00",
+   "notified_at": "2026-10-24T18:05:57+00:00"
+  },
+  "falabella:881324726": {
+   "price": 29.9,
+   "discount": 76.98,
+   "first_seen": "2026-10-24T18:04:54+00:00",
+   "notified_at": "2026-10-24T18:04:54+00:00"
+  },
+  "falabella:881337572": {
+   "price": 1399.0,
+   "discount": 69.58,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:881337575": {
+   "price": 1599.0,
+   "discount": 70.92,
+   "first_seen": "2026-10-24T18:05:25+00:00",
+   "notified_at": "2026-10-24T18:05:25+00:00"
+  },
+  "falabella:881515419": {
+   "price": 14.9,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:881517469": {
+   "price": 69.9,
+   "discount": 50.04,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:881517753": {
+   "price": 144.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:881517887": {
+   "price": 144.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:881552538": {
+   "price": 199.9,
+   "discount": 60.01,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:881552552": {
+   "price": 249.9,
+   "discount": 50.01,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:881569230": {
+   "price": 349.0,
+   "discount": 56.37,
+   "first_seen": "2026-10-24T18:06:04+00:00",
+   "notified_at": "2026-10-24T18:06:04+00:00"
+  },
+  "falabella:881607950": {
+   "price": 62.5,
+   "discount": 49.96,
+   "first_seen": "2026-10-24T19:21:25+00:00",
+   "notified_at": "2026-10-24T19:21:25+00:00"
+  },
+  "falabella:881621163": {
+   "price": 69.9,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:881688670": {
+   "price": 29.9,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:881688748": {
+   "price": 49.9,
+   "discount": 50.05,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:881688972": {
+   "price": 49.9,
+   "discount": 50.05,
+   "first_seen": "2026-10-24T18:50:27+00:00",
+   "notified_at": "2026-10-24T18:50:27+00:00"
+  },
+  "falabella:881689028": {
+   "price": 29.9,
+   "discount": 50.08,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:881689058": {
+   "price": 49.9,
+   "discount": 50.05,
+   "first_seen": "2026-10-24T18:50:27+00:00",
+   "notified_at": "2026-10-24T18:50:27+00:00"
+  },
+  "falabella:881689140": {
+   "price": 49.9,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:881698543": {
+   "price": 59.9,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:881725908": {
+   "price": 49.9,
+   "discount": 50.05,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:881771969": {
+   "price": 29.9,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:881854883": {
+   "price": 59.9,
+   "discount": 50.04,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:881857494": {
+   "price": 39.9,
+   "discount": 60.06,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:881861289": {
+   "price": 39.9,
+   "discount": 60.06,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:881861294": {
+   "price": 39.9,
+   "discount": 60.06,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:881861327": {
+   "price": 39.9,
+   "discount": 60.06,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:881861336": {
+   "price": 39.9,
+   "discount": 60.06,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:881861380": {
+   "price": 39.9,
+   "discount": 60.06,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:881870344": {
+   "price": 499.9,
+   "discount": 49.96,
+   "first_seen": "2026-10-24T19:21:35+00:00",
+   "notified_at": "2026-10-24T19:21:35+00:00"
+  },
+  "falabella:881956462": {
+   "price": 39.9,
+   "discount": 55.62,
+   "first_seen": "2026-10-24T18:05:39+00:00",
+   "notified_at": "2026-10-24T18:05:39+00:00"
+  },
+  "falabella:881983387": {
+   "price": 1149.0,
+   "discount": 57.43,
+   "first_seen": "2026-10-24T18:04:28+00:00",
+   "notified_at": "2026-10-24T18:04:28+00:00"
+  },
+  "falabella:881985225": {
+   "price": 34.9,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:881985227": {
+   "price": 39.9,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:881996640": {
+   "price": 19.9,
+   "discount": 60.12,
+   "first_seen": "2026-10-24T18:05:57+00:00",
+   "notified_at": "2026-10-24T18:05:57+00:00"
+  },
+  "falabella:882096817": {
+   "price": 49.9,
+   "discount": 61.59,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:882097015": {
+   "price": 49.9,
+   "discount": 61.59,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:882097322": {
+   "price": 49.9,
+   "discount": 61.59,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:882122451": {
+   "price": 1149.0,
+   "discount": 57.43,
+   "first_seen": "2026-10-24T18:49:32+00:00",
+   "notified_at": "2026-10-24T18:49:32+00:00"
+  },
+  "falabella:882260617": {
+   "price": 29.9,
+   "discount": 50.08,
+   "first_seen": "2026-10-24T18:50:27+00:00",
+   "notified_at": "2026-10-24T18:50:27+00:00"
+  },
+  "falabella:882497520": {
+   "price": 69.9,
+   "discount": 50.04,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:882497528": {
+   "price": 69.9,
+   "discount": 50.04,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:882525181": {
+   "price": 99.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:882525463": {
+   "price": 440.93,
+   "discount": 55.9,
+   "first_seen": "2026-10-24T18:05:43+00:00",
+   "notified_at": "2026-10-24T18:05:43+00:00"
+  },
+  "falabella:882525500": {
+   "price": 89.9,
+   "discount": 71.9,
+   "first_seen": "2026-10-24T18:05:43+00:00",
+   "notified_at": "2026-10-24T18:05:43+00:00"
+  },
+  "falabella:882525624": {
+   "price": 83.93,
+   "discount": 55.8,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:882526822": {
+   "price": 48.0,
+   "discount": 59.97,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:882675413": {
+   "price": 29.9,
+   "discount": 50.08,
+   "first_seen": "2026-10-24T18:50:34+00:00",
+   "notified_at": "2026-10-24T18:50:34+00:00"
+  },
+  "falabella:882711513": {
+   "price": 19.9,
+   "discount": 50.13,
+   "first_seen": "2026-10-24T18:06:04+00:00",
+   "notified_at": "2026-10-24T18:06:04+00:00"
+  },
+  "falabella:882711885": {
+   "price": 19.9,
+   "discount": 50.13,
+   "first_seen": "2026-10-24T18:06:04+00:00",
+   "notified_at": "2026-10-24T18:06:04+00:00"
+  },
+  "falabella:882712633": {
+   "price": 19.9,
+   "discount": 50.13,
+   "first_seen": "2026-10-24T18:06:04+00:00",
+   "notified_at": "2026-10-24T18:06:04+00:00"
+  },
+  "falabella:882717721": {
+   "price": 29.9,
+   "discount": 50.08,
+   "first_seen": "2026-10-24T18:50:27+00:00",
+   "notified_at": "2026-10-24T18:50:27+00:00"
+  },
+  "falabella:882759456": {
+   "price": 31.9,
+   "discount": 60.08,
+   "first_seen": "2026-10-24T18:50:27+00:00",
+   "notified_at": "2026-10-24T18:50:27+00:00"
+  },
+  "falabella:882769546": {
+   "price": 19.9,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:882769565": {
+   "price": 49.9,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:882870748": {
+   "price": 1499.0,
+   "discount": 70.01,
+   "first_seen": "2026-10-24T18:05:43+00:00",
+   "notified_at": "2026-10-24T18:05:43+00:00"
+  },
+  "falabella:882870756": {
+   "price": 879.9,
+   "discount": 70.66,
+   "first_seen": "2026-10-24T18:05:43+00:00",
+   "notified_at": "2026-10-24T18:05:43+00:00"
+  },
+  "falabella:882893298": {
+   "price": 129.0,
+   "discount": 67.74,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:882921417": {
+   "price": 359.0,
+   "discount": 55.12,
+   "first_seen": "2026-10-24T19:21:21+00:00",
+   "notified_at": "2026-10-24T19:21:21+00:00"
+  },
+  "falabella:882946610": {
+   "price": 379.9,
+   "discount": 52.51,
+   "first_seen": "2026-10-24T18:06:04+00:00",
+   "notified_at": "2026-10-24T18:06:04+00:00"
+  },
+  "falabella:883021827": {
+   "price": 14.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:51:01+00:00",
+   "notified_at": "2026-10-24T18:51:01+00:00"
+  },
+  "falabella:883023454": {
+   "price": 6.45,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:51+00:00",
+   "notified_at": "2026-10-24T18:50:51+00:00"
+  },
+  "falabella:883095006": {
+   "price": 69.0,
+   "discount": 65.48,
+   "first_seen": "2026-10-24T18:50:30+00:00",
+   "notified_at": "2026-10-24T18:50:30+00:00"
+  },
+  "falabella:883095013": {
+   "price": 79.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883095015": {
+   "price": 79.9,
+   "discount": 63.67,
+   "first_seen": "2026-10-24T18:50:30+00:00",
+   "notified_at": "2026-10-24T18:50:30+00:00"
+  },
+  "falabella:883145857": {
+   "price": 349.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883147662": {
+   "price": 39.9,
+   "discount": 60.06,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:883147680": {
+   "price": 39.9,
+   "discount": 60.06,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:883147699": {
+   "price": 39.9,
+   "discount": 60.06,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:883150541": {
+   "price": 169.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883159286": {
+   "price": 89.9,
+   "discount": 50.03,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:883166651": {
+   "price": 50.0,
+   "discount": 59.97,
+   "first_seen": "2026-10-24T18:50:37+00:00",
+   "notified_at": "2026-10-24T18:50:37+00:00"
+  },
+  "falabella:883167898": {
+   "price": 59.9,
+   "discount": 70.04,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:883168651": {
+   "price": 2999.0,
+   "discount": 50.01,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:883169679": {
+   "price": 59.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:37+00:00",
+   "notified_at": "2026-10-24T18:50:37+00:00"
+  },
+  "falabella:883170917": {
+   "price": 15.9,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883171817": {
+   "price": 44.0,
+   "discount": 59.96,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:883171845": {
+   "price": 44.0,
+   "discount": 59.96,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:883171869": {
+   "price": 165.0,
+   "discount": 49.98,
+   "first_seen": "2026-10-24T19:21:28+00:00",
+   "notified_at": "2026-10-24T19:21:28+00:00"
+  },
+  "falabella:883172269": {
+   "price": 39.9,
+   "discount": 55.62,
+   "first_seen": "2026-10-24T18:05:39+00:00",
+   "notified_at": "2026-10-24T18:05:39+00:00"
+  },
+  "falabella:883172320": {
+   "price": 89.9,
+   "discount": 52.66,
+   "first_seen": "2026-10-24T18:05:39+00:00",
+   "notified_at": "2026-10-24T18:05:39+00:00"
+  },
+  "falabella:883172329": {
+   "price": 39.9,
+   "discount": 55.62,
+   "first_seen": "2026-10-24T18:05:39+00:00",
+   "notified_at": "2026-10-24T18:05:39+00:00"
+  },
+  "falabella:883193572": {
+   "price": 29.9,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883264297": {
+   "price": 89.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T19:21:38+00:00",
+   "notified_at": "2026-10-24T19:21:38+00:00"
+  },
+  "falabella:883269843": {
+   "price": 64.9,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883270713": {
+   "price": 29.9,
+   "discount": 62.58,
+   "first_seen": "2026-10-24T18:05:57+00:00",
+   "notified_at": "2026-10-24T18:05:57+00:00"
+  },
+  "falabella:883270729": {
+   "price": 29.9,
+   "discount": 62.58,
+   "first_seen": "2026-10-24T18:05:57+00:00",
+   "notified_at": "2026-10-24T18:05:57+00:00"
+  },
+  "falabella:883270767": {
+   "price": 29.9,
+   "discount": 62.58,
+   "first_seen": "2026-10-24T18:05:57+00:00",
+   "notified_at": "2026-10-24T18:05:57+00:00"
+  },
+  "falabella:883270810": {
+   "price": 29.9,
+   "discount": 50.08,
+   "first_seen": "2026-10-24T18:50:27+00:00",
+   "notified_at": "2026-10-24T18:50:27+00:00"
+  },
+  "falabella:883273316": {
+   "price": 49.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883274083": {
+   "price": 59.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883274370": {
+   "price": 39.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T19:21:38+00:00",
+   "notified_at": "2026-10-24T19:21:38+00:00"
+  },
+  "falabella:883274395": {
+   "price": 59.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883274475": {
+   "price": 44.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T20:02:01+00:00",
+   "notified_at": "2026-10-24T20:02:01+00:00"
+  },
+  "falabella:883275277": {
+   "price": 39.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T19:21:38+00:00",
+   "notified_at": "2026-10-24T19:21:38+00:00"
+  },
+  "falabella:883275303": {
+   "price": 39.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883275753": {
+   "price": 34.9,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883275786": {
+   "price": 39.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:34+00:00",
+   "notified_at": "2026-10-24T18:50:34+00:00"
+  },
+  "falabella:883278762": {
+   "price": 39.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883291468": {
+   "price": 29.9,
+   "discount": 66.74,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:883295121": {
+   "price": 129.9,
+   "discount": 67.52,
+   "first_seen": "2026-10-24T19:19:31+00:00",
+   "notified_at": "2026-10-24T19:19:31+00:00"
+  },
+  "falabella:883301429": {
+   "price": 35.97,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883320305": {
+   "price": 69.9,
+   "discount": 53.37,
+   "first_seen": "2026-10-24T20:01:37+00:00",
+   "notified_at": "2026-10-24T20:01:37+00:00"
+  },
+  "falabella:883321349": {
+   "price": 59.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883321457": {
+   "price": 71.9,
+   "discount": 60.03,
+   "first_seen": "2026-10-24T20:00:42+00:00",
+   "notified_at": "2026-10-24T20:00:42+00:00"
+  },
+  "falabella:883321561": {
+   "price": 49.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883327431": {
+   "price": 29.9,
+   "discount": 62.58,
+   "first_seen": "2026-10-24T18:05:57+00:00",
+   "notified_at": "2026-10-24T18:05:57+00:00"
+  },
+  "falabella:883333460": {
+   "price": 999.0,
+   "discount": 50.03,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:883333480": {
+   "price": 999.0,
+   "discount": 50.03,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:883333589": {
+   "price": 249.0,
+   "discount": 58.49,
+   "first_seen": "2026-10-24T19:21:04+00:00",
+   "notified_at": "2026-10-24T19:21:04+00:00"
+  },
+  "falabella:883333592": {
+   "price": 269.0,
+   "discount": 55.16,
+   "first_seen": "2026-10-24T18:06:04+00:00",
+   "notified_at": "2026-10-24T18:06:04+00:00"
+  },
+  "falabella:883333598": {
+   "price": 899.0,
+   "discount": 55.03,
+   "first_seen": "2026-10-24T19:21:21+00:00",
+   "notified_at": "2026-10-24T19:21:21+00:00"
+  },
+  "falabella:883333601": {
+   "price": 899.0,
+   "discount": 55.03,
+   "first_seen": "2026-10-24T19:21:21+00:00",
+   "notified_at": "2026-10-24T19:21:21+00:00"
+  },
+  "falabella:883333886": {
+   "price": 39.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:51:01+00:00",
+   "notified_at": "2026-10-24T18:51:01+00:00"
+  },
+  "falabella:883333918": {
+   "price": 49.9,
+   "discount": 54.6,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:883334080": {
+   "price": 199.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:51:01+00:00",
+   "notified_at": "2026-10-24T18:51:01+00:00"
+  },
+  "falabella:883334092": {
+   "price": 34.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T19:21:35+00:00",
+   "notified_at": "2026-10-24T19:21:35+00:00"
+  },
+  "falabella:883334119": {
+   "price": 124.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:883334351": {
+   "price": 199.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T20:01:40+00:00",
+   "notified_at": "2026-10-24T20:01:40+00:00"
+  },
+  "falabella:883335366": {
+   "price": 14.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T19:21:35+00:00",
+   "notified_at": "2026-10-24T19:21:35+00:00"
+  },
+  "falabella:883335974": {
+   "price": 79.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883335977": {
+   "price": 79.9,
+   "discount": 55.59,
+   "first_seen": "2026-10-24T20:01:37+00:00",
+   "notified_at": "2026-10-24T20:01:37+00:00"
+  },
+  "falabella:883335982": {
+   "price": 59.9,
+   "discount": 57.18,
+   "first_seen": "2026-10-24T19:21:14+00:00",
+   "notified_at": "2026-10-24T19:21:14+00:00"
+  },
+  "falabella:883351237": {
+   "price": 14.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883351335": {
+   "price": 74.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883351340": {
+   "price": 29.9,
+   "discount": 50.08,
+   "first_seen": "2026-10-24T19:21:38+00:00",
+   "notified_at": "2026-10-24T19:21:38+00:00"
+  },
+  "falabella:883353545": {
+   "price": 19.9,
+   "discount": 50.13,
+   "first_seen": "2026-10-24T18:05:39+00:00",
+   "notified_at": "2026-10-24T18:05:39+00:00"
+  },
+  "falabella:883378310": {
+   "price": 54.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T20:02:01+00:00",
+   "notified_at": "2026-10-24T20:02:01+00:00"
+  },
+  "falabella:883378436": {
+   "price": 34.9,
+   "discount": 50.07,
+   "first_seen": "2026-10-24T19:21:38+00:00",
+   "notified_at": "2026-10-24T19:21:38+00:00"
+  },
+  "falabella:883378615": {
+   "price": 27.9,
+   "discount": 60.09,
+   "first_seen": "2026-10-24T18:50:09+00:00",
+   "notified_at": "2026-10-24T18:50:09+00:00"
+  },
+  "falabella:883396429": {
+   "price": 439.0,
+   "discount": 56.06,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:883396434": {
+   "price": 499.0,
+   "discount": 54.6,
+   "first_seen": "2026-10-24T19:21:28+00:00",
+   "notified_at": "2026-10-24T19:21:28+00:00"
+  },
+  "falabella:883403527": {
+   "price": 119.0,
+   "discount": 50.4,
+   "first_seen": "2026-10-24T18:50:30+00:00",
+   "notified_at": "2026-10-24T18:50:30+00:00"
+  },
+  "falabella:883403530": {
+   "price": 219.0,
+   "discount": 56.19,
+   "first_seen": "2026-10-24T18:50:30+00:00",
+   "notified_at": "2026-10-24T18:50:30+00:00"
+  },
+  "falabella:883403536": {
+   "price": 169.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883403538": {
+   "price": 79.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883403541": {
+   "price": 39.9,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883403543": {
+   "price": 49.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883403545": {
+   "price": 129.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883403636": {
+   "price": 49.9,
+   "discount": 50.05,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:883403638": {
+   "price": 49.9,
+   "discount": 50.05,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:883403646": {
+   "price": 49.9,
+   "discount": 50.05,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:883407156": {
+   "price": 29.9,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883407753": {
+   "price": 599.0,
+   "discount": 53.89,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:883411228": {
+   "price": 929.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883433337": {
+   "price": 39.9,
+   "discount": 60.06,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:883433361": {
+   "price": 39.9,
+   "discount": 60.06,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:883434533": {
+   "price": 14.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883438931": {
+   "price": 43.96,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:883450740": {
+   "price": 39.9,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883450749": {
+   "price": 119.0,
+   "discount": 60.32,
+   "first_seen": "2026-10-24T18:50:30+00:00",
+   "notified_at": "2026-10-24T18:50:30+00:00"
+  },
+  "falabella:883455279": {
+   "price": 34.9,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883474538": {
+   "price": 64.9,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883480597": {
+   "price": 15.9,
+   "discount": 60.15,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:883480610": {
+   "price": 44.9,
+   "discount": 50.06,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:883480614": {
+   "price": 34.9,
+   "discount": 50.07,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:883480616": {
+   "price": 15.9,
+   "discount": 60.15,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:883480664": {
+   "price": 27.9,
+   "discount": 60.09,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:883480804": {
+   "price": 49.9,
+   "discount": 50.05,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:883480846": {
+   "price": 9.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:02+00:00",
+   "notified_at": "2026-10-24T18:50:02+00:00"
+  },
+  "falabella:883481583": {
+   "price": 3999.0,
+   "discount": 50.01,
+   "first_seen": "2026-10-24T20:01:40+00:00",
+   "notified_at": "2026-10-24T20:01:40+00:00"
+  },
+  "falabella:883484610": {
+   "price": 71.9,
+   "discount": 60.03,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:883488640": {
+   "price": 399.9,
+   "discount": 55.52,
+   "first_seen": "2026-10-24T18:05:43+00:00",
+   "notified_at": "2026-10-24T18:05:43+00:00"
+  },
+  "falabella:883490349": {
+   "price": 49.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883493362": {
+   "price": 349.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883495160": {
+   "price": 59.9,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883495161": {
+   "price": 79.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883501665": {
+   "price": 499.0,
+   "discount": 50.1,
+   "first_seen": "2026-10-24T20:01:58+00:00",
+   "notified_at": "2026-10-24T20:01:58+00:00"
+  },
+  "falabella:883501671": {
+   "price": 279.9,
+   "discount": 53.27,
+   "first_seen": "2026-10-24T18:51:05+00:00",
+   "notified_at": "2026-10-24T18:51:05+00:00"
+  },
+  "falabella:883509088": {
+   "price": 499.0,
+   "discount": 54.6,
+   "first_seen": "2026-10-24T18:05:43+00:00",
+   "notified_at": "2026-10-24T18:05:43+00:00"
+  },
+  "falabella:883529920": {
+   "price": 2899.0,
+   "discount": 58.58,
+   "first_seen": "2026-10-24T18:05:43+00:00",
+   "notified_at": "2026-10-24T18:05:43+00:00"
+  },
+  "falabella:883529985": {
+   "price": 129.9,
+   "discount": 53.59,
+   "first_seen": "2026-10-24T18:05:39+00:00",
+   "notified_at": "2026-10-24T18:05:39+00:00"
+  },
+  "falabella:883529987": {
+   "price": 99.9,
+   "discount": 50.03,
+   "first_seen": "2026-10-24T18:50:40+00:00",
+   "notified_at": "2026-10-24T18:50:40+00:00"
+  },
+  "falabella:883535244": {
+   "price": 19.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883535407": {
+   "price": 24.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883535539": {
+   "price": 19.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883535646": {
+   "price": 24.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883535754": {
+   "price": 699.9,
+   "discount": 63.16,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:883536209": {
+   "price": 49.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T20:02:01+00:00",
+   "notified_at": "2026-10-24T20:02:01+00:00"
+  },
+  "falabella:883540162": {
+   "price": 49.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883544382": {
+   "price": 499.0,
+   "discount": 50.05,
+   "first_seen": "2026-10-24T19:21:38+00:00",
+   "notified_at": "2026-10-24T19:21:38+00:00"
+  },
+  "falabella:883569108": {
+   "price": 4.9,
+   "discount": 50.51,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:883569111": {
+   "price": 4.9,
+   "discount": 50.51,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:883569117": {
+   "price": 4.9,
+   "discount": 50.51,
+   "first_seen": "2026-10-24T18:05:53+00:00",
+   "notified_at": "2026-10-24T18:05:53+00:00"
+  },
+  "falabella:883569119": {
+   "price": 459.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883574457": {
+   "price": 169.9,
+   "discount": 51.44,
+   "first_seen": "2026-10-24T19:21:18+00:00",
+   "notified_at": "2026-10-24T19:21:18+00:00"
+  },
+  "falabella:883577164": {
+   "price": 39.9,
+   "discount": 55.62,
+   "first_seen": "2026-10-24T20:01:14+00:00",
+   "notified_at": "2026-10-24T20:01:14+00:00"
+  },
+  "falabella:883577259": {
+   "price": 4499.0,
+   "discount": 50.01,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:883577269": {
+   "price": 499.9,
+   "discount": 49.96,
+   "first_seen": "2026-10-24T19:21:35+00:00",
+   "notified_at": "2026-10-24T19:21:35+00:00"
+  },
+  "falabella:883579086": {
+   "price": 39.9,
+   "discount": 50.06,
+   "first_seen": "2026-10-24T18:50:34+00:00",
+   "notified_at": "2026-10-24T18:50:34+00:00"
+  },
+  "falabella:883580428": {
+   "price": 14.9,
+   "discount": 50.17,
+   "first_seen": "2026-10-24T19:20:13+00:00",
+   "notified_at": "2026-10-24T19:20:13+00:00"
+  },
+  "falabella:883580670": {
+   "price": 24.9,
+   "discount": 50.1,
+   "first_seen": "2026-10-24T19:21:38+00:00",
+   "notified_at": "2026-10-24T19:21:38+00:00"
+  },
+  "falabella:883595820": {
+   "price": 49.0,
+   "discount": 62.02,
+   "first_seen": "2026-10-24T20:00:09+00:00",
+   "notified_at": "2026-10-24T20:00:09+00:00"
+  },
+  "falabella:883600839": {
+   "price": 42.0,
+   "discount": 79.99,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:883602769": {
+   "price": 179.94,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883603133": {
+   "price": 20.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883604043": {
+   "price": 69.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883604199": {
+   "price": 89.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T20:02:01+00:00",
+   "notified_at": "2026-10-24T20:02:01+00:00"
+  },
+  "falabella:883604397": {
+   "price": 24.9,
+   "discount": 50.1,
+   "first_seen": "2026-10-24T19:21:38+00:00",
+   "notified_at": "2026-10-24T19:21:38+00:00"
+  },
+  "falabella:883604484": {
+   "price": 84.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:34+00:00",
+   "notified_at": "2026-10-24T18:50:34+00:00"
+  },
+  "falabella:883606443": {
+   "price": 52.0,
+   "discount": 59.97,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:883607842": {
+   "price": 64.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T19:21:38+00:00",
+   "notified_at": "2026-10-24T19:21:38+00:00"
+  },
+  "falabella:883607888": {
+   "price": 89.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883607914": {
+   "price": 89.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883610168": {
+   "price": 119.9,
+   "discount": 50.02,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:883611543": {
+   "price": 64.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883611620": {
+   "price": 24.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:34+00:00",
+   "notified_at": "2026-10-24T18:50:34+00:00"
+  },
+  "falabella:883611646": {
+   "price": 54.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:34+00:00",
+   "notified_at": "2026-10-24T18:50:34+00:00"
+  },
+  "falabella:883611720": {
+   "price": 54.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T20:02:01+00:00",
+   "notified_at": "2026-10-24T20:02:01+00:00"
+  },
+  "falabella:883611916": {
+   "price": 39.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T19:21:38+00:00",
+   "notified_at": "2026-10-24T19:21:38+00:00"
+  },
+  "falabella:883618752": {
+   "price": 9.9,
+   "discount": 60.24,
+   "first_seen": "2026-10-24T19:19:50+00:00",
+   "notified_at": "2026-10-24T19:19:50+00:00"
+  },
+  "falabella:883619455": {
+   "price": 14.9,
+   "discount": 50.17,
+   "first_seen": "2026-10-24T18:51:05+00:00",
+   "notified_at": "2026-10-24T18:51:05+00:00"
+  },
+  "falabella:883620277": {
+   "price": 14.9,
+   "discount": 50.17,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:883621720": {
+   "price": 44.9,
+   "discount": 70.05,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:883625256": {
+   "price": 34.9,
+   "discount": 50.07,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:883625419": {
+   "price": 19.9,
+   "discount": 60.12,
+   "first_seen": "2026-10-24T18:05:57+00:00",
+   "notified_at": "2026-10-24T18:05:57+00:00"
+  },
+  "falabella:883625858": {
+   "price": 34.9,
+   "discount": 73.13,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:883625974": {
+   "price": 19.9,
+   "discount": 50.13,
+   "first_seen": "2026-10-24T19:21:07+00:00",
+   "notified_at": "2026-10-24T19:21:07+00:00"
+  },
+  "falabella:883634182": {
+   "price": 39.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883634520": {
+   "price": 38.9,
+   "discount": 88.21,
+   "first_seen": "2026-10-24T19:19:01+00:00",
+   "notified_at": "2026-10-24T19:19:01+00:00"
+  },
+  "falabella:883635588": {
+   "price": 4.9,
+   "discount": 50.51,
+   "first_seen": "2026-10-24T18:50:37+00:00",
+   "notified_at": "2026-10-24T18:50:37+00:00"
+  },
+  "falabella:883635590": {
+   "price": 4.9,
+   "discount": 50.51,
+   "first_seen": "2026-10-24T18:50:37+00:00",
+   "notified_at": "2026-10-24T18:50:37+00:00"
+  },
+  "falabella:883635592": {
+   "price": 4.9,
+   "discount": 50.51,
+   "first_seen": "2026-10-24T18:50:37+00:00",
+   "notified_at": "2026-10-24T18:50:37+00:00"
+  },
+  "falabella:883635629": {
+   "price": 7.9,
+   "discount": 50.31,
+   "first_seen": "2026-10-24T18:05:32+00:00",
+   "notified_at": "2026-10-24T18:05:32+00:00"
+  },
+  "falabella:883635635": {
+   "price": 30.0,
+   "discount": 49.92,
+   "first_seen": "2026-10-24T19:21:25+00:00",
+   "notified_at": "2026-10-24T19:21:25+00:00"
+  },
+  "falabella:883642028": {
+   "price": 59.9,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883646951": {
+   "price": 34.9,
+   "discount": 73.13,
+   "first_seen": "2026-10-24T18:48:57+00:00",
+   "notified_at": "2026-10-24T18:48:57+00:00"
+  },
+  "falabella:883650066": {
+   "price": 479.0,
+   "discount": 60.05,
+   "first_seen": "2026-10-24T18:50:34+00:00",
+   "notified_at": "2026-10-24T18:50:34+00:00"
+  },
+  "falabella:883655441": {
+   "price": 44.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T19:21:11+00:00",
+   "notified_at": "2026-10-24T19:21:11+00:00"
+  },
+  "falabella:883655586": {
+   "price": 149.9,
+   "discount": 50.02,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:883655597": {
+   "price": 69.9,
+   "discount": 50.04,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:883658834": {
+   "price": 49.9,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883662000": {
+   "price": 84.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:51:01+00:00",
+   "notified_at": "2026-10-24T18:51:01+00:00"
+  },
+  "falabella:883663918": {
+   "price": 34.9,
+   "discount": 65.07,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:883664146": {
+   "price": 69.9,
+   "discount": 69.6,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:883672064": {
+   "price": 2299.0,
+   "discount": 54.01,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:883672174": {
+   "price": 999.0,
+   "discount": 60.02,
+   "first_seen": "2026-10-24T18:05:43+00:00",
+   "notified_at": "2026-10-24T18:05:43+00:00"
+  },
+  "falabella:883683915": {
+   "price": 79.96,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883688306": {
+   "price": 169.9,
+   "discount": 51.44,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:883688312": {
+   "price": 169.9,
+   "discount": 51.44,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:883688318": {
+   "price": 119.9,
+   "discount": 52.02,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:883688733": {
+   "price": 74.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:51:01+00:00",
+   "notified_at": "2026-10-24T18:51:01+00:00"
+  },
+  "falabella:883689951": {
+   "price": 174.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883690124": {
+   "price": 59.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:34+00:00",
+   "notified_at": "2026-10-24T18:50:34+00:00"
+  },
+  "falabella:883690189": {
+   "price": 79.96,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883690506": {
+   "price": 59.96,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883693173": {
+   "price": 99.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:51:01+00:00",
+   "notified_at": "2026-10-24T18:51:01+00:00"
+  },
+  "falabella:883693520": {
+   "price": 10.5,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883694401": {
+   "price": 14.9,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883694419": {
+   "price": 12.9,
+   "discount": 56.86,
+   "first_seen": "2026-10-24T18:05:57+00:00",
+   "notified_at": "2026-10-24T18:05:57+00:00"
+  },
+  "falabella:883697702": {
+   "price": 9.9,
+   "discount": 60.24,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:883714532": {
+   "price": 350.0,
+   "discount": 49.99,
+   "first_seen": "2026-10-24T20:01:44+00:00",
+   "notified_at": "2026-10-24T20:01:44+00:00"
+  },
+  "falabella:883736395": {
+   "price": 149.9,
+   "discount": 50.02,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:883736563": {
+   "price": 129.9,
+   "discount": 50.02,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:883736926": {
+   "price": 199.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883742299": {
+   "price": 89.97,
+   "discount": 70.0,
+   "first_seen": "2026-10-24T18:04:20+00:00",
+   "notified_at": "2026-10-24T18:04:20+00:00"
+  },
+  "falabella:883742434": {
+   "price": 89.97,
+   "discount": 70.0,
+   "first_seen": "2026-10-24T18:50:27+00:00",
+   "notified_at": "2026-10-24T18:50:27+00:00"
+  },
+  "falabella:883743070": {
+   "price": 59.9,
+   "discount": 64.74,
+   "first_seen": "2026-10-24T20:00:57+00:00",
+   "notified_at": "2026-10-24T20:00:57+00:00"
+  },
+  "falabella:883745533": {
+   "price": 124.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883745622": {
+   "price": 79.9,
+   "discount": 60.03,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:883745765": {
+   "price": 68.0,
+   "discount": 59.98,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:883745831": {
+   "price": 99.9,
+   "discount": 52.41,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:883745872": {
+   "price": 68.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883746967": {
+   "price": 2299.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883749120": {
+   "price": 399.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883754423": {
+   "price": 23.97,
+   "discount": 70.0,
+   "first_seen": "2026-10-24T18:50:27+00:00",
+   "notified_at": "2026-10-24T18:50:27+00:00"
+  },
+  "falabella:883756284": {
+   "price": 29.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T20:01:33+00:00",
+   "notified_at": "2026-10-24T20:01:33+00:00"
+  },
+  "falabella:883772593": {
+   "price": 40.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883772810": {
+   "price": 79.96,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:50:27+00:00",
+   "notified_at": "2026-10-24T18:50:27+00:00"
+  },
+  "falabella:883772984": {
+   "price": 39.96,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:05:57+00:00",
+   "notified_at": "2026-10-24T18:05:57+00:00"
+  },
+  "falabella:883773225": {
+   "price": 87.96,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:05:57+00:00",
+   "notified_at": "2026-10-24T18:05:57+00:00"
+  },
+  "falabella:883773432": {
+   "price": 51.96,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:883773602": {
+   "price": 14.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883774093": {
+   "price": 44.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:04:36+00:00",
+   "notified_at": "2026-10-24T18:04:36+00:00"
+  },
+  "falabella:883774395": {
+   "price": 44.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:34+00:00",
+   "notified_at": "2026-10-24T18:50:34+00:00"
+  },
+  "falabella:883774429": {
+   "price": 44.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883774621": {
+   "price": 89.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:34+00:00",
+   "notified_at": "2026-10-24T18:50:34+00:00"
+  },
+  "falabella:883774958": {
+   "price": 74.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883775627": {
+   "price": 79.96,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:883776012": {
+   "price": 71.96,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:883776047": {
+   "price": 79.96,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883776469": {
+   "price": 63.96,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883776623": {
+   "price": 77.97,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883776854": {
+   "price": 65.97,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883777382": {
+   "price": 59.96,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883777403": {
+   "price": 67.96,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:883777461": {
+   "price": 43.96,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:883780326": {
+   "price": 34.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883784022": {
+   "price": 39.96,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:50:27+00:00",
+   "notified_at": "2026-10-24T18:50:27+00:00"
+  },
+  "falabella:883801858": {
+   "price": 34.9,
+   "discount": 73.13,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:883801883": {
+   "price": 68.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883801930": {
+   "price": 68.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883802623": {
+   "price": 67.96,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883802653": {
+   "price": 107.96,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883802693": {
+   "price": 107.96,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:883802715": {
+   "price": 75.96,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:883802721": {
+   "price": 75.96,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883802824": {
+   "price": 107.96,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883817367": {
+   "price": 30.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883819164": {
+   "price": 39.9,
+   "discount": 60.06,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:883819170": {
+   "price": 39.9,
+   "discount": 60.06,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:883821811": {
+   "price": 179.9,
+   "discount": 52.65,
+   "first_seen": "2026-10-24T18:05:39+00:00",
+   "notified_at": "2026-10-24T18:05:39+00:00"
+  },
+  "falabella:883830472": {
+   "price": 1999.0,
+   "discount": 50.01,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:883831727": {
+   "price": 39.9,
+   "discount": 60.06,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:883831736": {
+   "price": 39.9,
+   "discount": 60.06,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:883834733": {
+   "price": 39.9,
+   "discount": 81.86,
+   "first_seen": "2026-10-24T18:03:01+00:00",
+   "notified_at": "2026-10-24T18:03:01+00:00"
+  },
+  "falabella:883838012": {
+   "price": 19.9,
+   "discount": 83.4,
+   "first_seen": "2026-10-24T18:48:18+00:00",
+   "notified_at": "2026-10-24T18:48:18+00:00"
+  },
+  "falabella:883838179": {
+   "price": 349.5,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883841948": {
+   "price": 49.9,
+   "discount": 61.59,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:883841953": {
+   "price": 49.9,
+   "discount": 50.05,
+   "first_seen": "2026-10-24T18:50:40+00:00",
+   "notified_at": "2026-10-24T18:50:40+00:00"
+  },
+  "falabella:883841957": {
+   "price": 49.9,
+   "discount": 50.05,
+   "first_seen": "2026-10-24T18:50:40+00:00",
+   "notified_at": "2026-10-24T18:50:40+00:00"
+  },
+  "falabella:883841960": {
+   "price": 59.9,
+   "discount": 53.89,
+   "first_seen": "2026-10-24T18:05:39+00:00",
+   "notified_at": "2026-10-24T18:05:39+00:00"
+  },
+  "falabella:883841963": {
+   "price": 59.9,
+   "discount": 53.89,
+   "first_seen": "2026-10-24T18:05:39+00:00",
+   "notified_at": "2026-10-24T18:05:39+00:00"
+  },
+  "falabella:883842141": {
+   "price": 24.9,
+   "discount": 50.1,
+   "first_seen": "2026-10-24T18:50:40+00:00",
+   "notified_at": "2026-10-24T18:50:40+00:00"
+  },
+  "falabella:883843281": {
+   "price": 49.9,
+   "discount": 61.59,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:883843284": {
+   "price": 49.9,
+   "discount": 61.59,
+   "first_seen": "2026-10-24T18:05:36+00:00",
+   "notified_at": "2026-10-24T18:05:36+00:00"
+  },
+  "falabella:883845983": {
+   "price": 35.96,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883846270": {
+   "price": 39.96,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:50:27+00:00",
+   "notified_at": "2026-10-24T18:50:27+00:00"
+  },
+  "falabella:883846403": {
+   "price": 47.96,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883846834": {
+   "price": 31.96,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883852774": {
+   "price": 71.96,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883856479": {
+   "price": 2399.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883856951": {
+   "price": 74.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883857164": {
+   "price": 31.96,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:05:57+00:00",
+   "notified_at": "2026-10-24T18:05:57+00:00"
+  },
+  "falabella:883857272": {
+   "price": 71.96,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883857306": {
+   "price": 31.96,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:50:27+00:00",
+   "notified_at": "2026-10-24T18:50:27+00:00"
+  },
+  "falabella:883863713": {
+   "price": 74.95,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883866720": {
+   "price": 74.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:34+00:00",
+   "notified_at": "2026-10-24T18:50:34+00:00"
+  },
+  "falabella:883893495": {
+   "price": 31.96,
+   "discount": 60.0,
+   "first_seen": "2026-10-24T18:50:27+00:00",
+   "notified_at": "2026-10-24T18:50:27+00:00"
+  },
+  "falabella:883920536": {
+   "price": 49.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883922007": {
+   "price": 67.96,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883922021": {
+   "price": 67.96,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883954442": {
+   "price": 3299.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883954454": {
+   "price": 3249.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:883954460": {
+   "price": 3499.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:prod10840235": {
+   "price": 39.9,
+   "discount": 50.06,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:prod14570044": {
+   "price": 94.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:37+00:00",
+   "notified_at": "2026-10-24T18:50:37+00:00"
+  },
+  "falabella:prod14790005": {
+   "price": 66.15,
+   "discount": 65.0,
+   "first_seen": "2026-10-24T19:59:44+00:00",
+   "notified_at": "2026-10-24T19:59:44+00:00"
+  },
+  "falabella:prod15170018": {
+   "price": 1599.0,
+   "discount": 51.09,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:prod16270018": {
+   "price": 64.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T19:21:25+00:00",
+   "notified_at": "2026-10-24T19:21:25+00:00"
+  },
+  "falabella:prod16530152": {
+   "price": 9.9,
+   "discount": 75.19,
+   "first_seen": "2026-10-24T18:03:48+00:00",
+   "notified_at": "2026-10-24T18:03:48+00:00"
+  },
+  "falabella:prod16530235": {
+   "price": 111.9,
+   "discount": 60.02,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:prod16570006": {
+   "price": 43.75,
+   "discount": 65.0,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:prod16870122": {
+   "price": 62.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T20:01:54+00:00",
+   "notified_at": "2026-10-24T20:01:54+00:00"
+  },
+  "falabella:prod17010076": {
+   "price": 209.0,
+   "discount": 51.28,
+   "first_seen": "2026-10-24T19:21:28+00:00",
+   "notified_at": "2026-10-24T19:21:28+00:00"
+  },
+  "falabella:prod17340317": {
+   "price": 449.0,
+   "discount": 52.69,
+   "first_seen": "2026-10-24T19:21:28+00:00",
+   "notified_at": "2026-10-24T19:21:28+00:00"
+  },
+  "falabella:prod17340318": {
+   "price": 499.0,
+   "discount": 54.6,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:prod17340319": {
+   "price": 549.0,
+   "discount": 54.21,
+   "first_seen": "2026-10-24T19:21:28+00:00",
+   "notified_at": "2026-10-24T19:21:28+00:00"
+  },
+  "falabella:prod17340320": {
+   "price": 599.0,
+   "discount": 52.04,
+   "first_seen": "2026-10-24T19:21:28+00:00",
+   "notified_at": "2026-10-24T19:21:28+00:00"
+  },
+  "falabella:prod17380621": {
+   "price": 2899.0,
+   "discount": 49.75,
+   "first_seen": "2026-10-24T19:21:28+00:00",
+   "notified_at": "2026-10-24T19:21:28+00:00"
+  },
+  "falabella:prod17530011": {
+   "price": 2499.0,
+   "discount": 54.56,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:prod17580066": {
+   "price": 3099.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:prod17640010": {
+   "price": 299.9,
+   "discount": 49.93,
+   "first_seen": "2026-10-24T19:21:28+00:00",
+   "notified_at": "2026-10-24T19:21:28+00:00"
+  },
+  "falabella:prod17640012": {
+   "price": 499.9,
+   "discount": 49.96,
+   "first_seen": "2026-10-24T19:21:28+00:00",
+   "notified_at": "2026-10-24T19:21:28+00:00"
+  },
+  "falabella:prod17701041": {
+   "price": 69.9,
+   "discount": 76.69,
+   "first_seen": "2026-10-24T18:03:28+00:00",
+   "notified_at": "2026-10-24T18:03:28+00:00"
+  },
+  "falabella:prod17710052": {
+   "price": 92.9,
+   "discount": 81.42,
+   "first_seen": "2026-10-24T18:48:25+00:00",
+   "notified_at": "2026-10-24T18:48:25+00:00"
+  },
+  "falabella:prod17710076": {
+   "price": 349.9,
+   "discount": 70.82,
+   "first_seen": "2026-10-24T18:05:43+00:00",
+   "notified_at": "2026-10-24T18:05:43+00:00"
+  },
+  "falabella:prod17710092": {
+   "price": 399.9,
+   "discount": 55.52,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:prod17820009": {
+   "price": 419.0,
+   "discount": 53.39,
+   "first_seen": "2026-10-24T19:21:28+00:00",
+   "notified_at": "2026-10-24T19:21:28+00:00"
+  },
+  "falabella:prod17850192": {
+   "price": 799.0,
+   "discount": 50.03,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:prod17870618": {
+   "price": 35.8,
+   "discount": 80.0,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:prod17892109": {
+   "price": 49.9,
+   "discount": 50.05,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:prod17910011": {
+   "price": 74.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T19:21:25+00:00",
+   "notified_at": "2026-10-24T19:21:25+00:00"
+  },
+  "falabella:prod17960119": {
+   "price": 595.0,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:prod17960253": {
+   "price": 199.9,
+   "discount": 49.9,
+   "first_seen": "2026-10-24T19:21:35+00:00",
+   "notified_at": "2026-10-24T19:21:35+00:00"
+  },
+  "falabella:prod18070263": {
+   "price": 165.0,
+   "discount": 49.98,
+   "first_seen": "2026-10-24T19:21:28+00:00",
+   "notified_at": "2026-10-24T19:21:28+00:00"
+  },
+  "falabella:prod18070427": {
+   "price": 79.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T19:21:25+00:00",
+   "notified_at": "2026-10-24T19:21:25+00:00"
+  },
+  "falabella:prod18090491": {
+   "price": 149.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:prod18120125": {
+   "price": 399.9,
+   "discount": 59.97,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:prod18130669": {
+   "price": 2399.0,
+   "discount": 50.01,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:prod18130671": {
+   "price": 2299.0,
+   "discount": 50.01,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:prod18130672": {
+   "price": 1599.0,
+   "discount": 50.02,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:prod18140592": {
+   "price": 91.9,
+   "discount": 60.03,
+   "first_seen": "2026-10-24T18:05:43+00:00",
+   "notified_at": "2026-10-24T18:05:43+00:00"
+  },
+  "falabella:prod18140593": {
+   "price": 59.9,
+   "discount": 70.04,
+   "first_seen": "2026-10-24T18:05:43+00:00",
+   "notified_at": "2026-10-24T18:05:43+00:00"
+  },
+  "falabella:prod18140595": {
+   "price": 47.9,
+   "discount": 60.05,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:prod18230110": {
+   "price": 1250.0,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:prod18240012": {
+   "price": 89.9,
+   "discount": 65.41,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:prod18240021": {
+   "price": 35.9,
+   "discount": 60.07,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:prod18240036": {
+   "price": 149.9,
+   "discount": 50.02,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:prod18240037": {
+   "price": 59.9,
+   "discount": 60.04,
+   "first_seen": "2026-10-24T18:49:55+00:00",
+   "notified_at": "2026-10-24T18:49:55+00:00"
+  },
+  "falabella:prod18280126": {
+   "price": 99.9,
+   "discount": 50.03,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:prod18290416": {
+   "price": 3499.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:prod18301479": {
+   "price": 74.9,
+   "discount": 64.33,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:prod18301794": {
+   "price": 8.45,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:prod18301795": {
+   "price": 8.45,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:prod18301796": {
+   "price": 8.45,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:prod18302384": {
+   "price": 73.5,
+   "discount": 65.0,
+   "first_seen": "2026-10-24T18:05:29+00:00",
+   "notified_at": "2026-10-24T18:05:29+00:00"
+  },
+  "falabella:prod18310343": {
+   "price": 7.98,
+   "discount": 77.17,
+   "first_seen": "2026-10-24T18:03:20+00:00",
+   "notified_at": "2026-10-24T18:03:20+00:00"
+  },
+  "falabella:prod18330088": {
+   "price": 174.95,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:prod18400219": {
+   "price": 119.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:prod18400221": {
+   "price": 99.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:prod18400455": {
+   "price": 999.0,
+   "discount": 50.03,
+   "first_seen": "2026-10-24T19:21:35+00:00",
+   "notified_at": "2026-10-24T19:21:35+00:00"
+  },
+  "falabella:prod18400457": {
+   "price": 999.0,
+   "discount": 50.03,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:prod18410446": {
+   "price": 2499.0,
+   "discount": 0.0,
+   "first_seen": "2026-10-24T17:58:06+00:00",
+   "notified_at": "2026-10-24T17:58:06+00:00"
+  },
+  "falabella:prod18450041": {
+   "price": 149.9,
+   "discount": 62.52,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:prod18450043": {
+   "price": 499.9,
+   "discount": 49.96,
+   "first_seen": "2026-10-24T19:21:28+00:00",
+   "notified_at": "2026-10-24T19:21:28+00:00"
+  },
+  "falabella:prod18450045": {
+   "price": 599.0,
+   "discount": 53.89,
+   "first_seen": "2026-10-24T18:05:43+00:00",
+   "notified_at": "2026-10-24T18:05:43+00:00"
+  },
+  "falabella:prod18450046": {
+   "price": 499.9,
+   "discount": 66.65,
+   "first_seen": "2026-10-24T18:05:46+00:00",
+   "notified_at": "2026-10-24T18:05:46+00:00"
+  },
+  "falabella:prod18450047": {
+   "price": 299.9,
+   "discount": 66.64,
+   "first_seen": "2026-10-24T18:05:43+00:00",
+   "notified_at": "2026-10-24T18:05:43+00:00"
+  },
+  "falabella:prod18450048": {
+   "price": 799.0,
+   "discount": 57.93,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:prod18450050": {
+   "price": 399.9,
+   "discount": 69.21,
+   "first_seen": "2026-10-24T18:05:43+00:00",
+   "notified_at": "2026-10-24T18:05:43+00:00"
+  },
+  "falabella:prod18450053": {
+   "price": 899.0,
+   "discount": 55.03,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:prod18450054": {
+   "price": 299.9,
+   "discount": 57.1,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:prod18450055": {
+   "price": 699.0,
+   "discount": 53.37,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:prod18450057": {
+   "price": 349.9,
+   "discount": 64.97,
+   "first_seen": "2026-10-24T18:05:43+00:00",
+   "notified_at": "2026-10-24T18:05:43+00:00"
+  },
+  "falabella:prod18450271": {
+   "price": 109.9,
+   "discount": 50.02,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:prod18450275": {
+   "price": 99.9,
+   "discount": 50.03,
+   "first_seen": "2026-10-24T20:01:44+00:00",
+   "notified_at": "2026-10-24T20:01:44+00:00"
+  },
+  "falabella:prod18450279": {
+   "price": 119.9,
+   "discount": 52.02,
+   "first_seen": "2026-10-24T19:21:28+00:00",
+   "notified_at": "2026-10-24T19:21:28+00:00"
+  },
+  "falabella:prod18450468": {
+   "price": 2149.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:47+00:00",
+   "notified_at": "2026-10-24T18:50:47+00:00"
+  },
+  "falabella:prod18460870": {
+   "price": 49.9,
+   "discount": 58.38,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:prod18460871": {
+   "price": 49.9,
+   "discount": 58.38,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:prod18460872": {
+   "price": 49.9,
+   "discount": 58.38,
+   "first_seen": "2026-10-24T18:05:50+00:00",
+   "notified_at": "2026-10-24T18:05:50+00:00"
+  },
+  "falabella:prod18461168": {
+   "price": 44.9,
+   "discount": 50.06,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:prod18470480": {
+   "price": 52.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T20:01:54+00:00",
+   "notified_at": "2026-10-24T20:01:54+00:00"
+  },
+  "falabella:prod18510014": {
+   "price": 99.9,
+   "discount": 50.03,
+   "first_seen": "2026-10-24T18:50:54+00:00",
+   "notified_at": "2026-10-24T18:50:54+00:00"
+  },
+  "falabella:prod18521713": {
+   "price": 5499.0,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T18:50:58+00:00",
+   "notified_at": "2026-10-24T18:50:58+00:00"
+  },
+  "falabella:prod18581023": {
+   "price": 219.0,
+   "discount": 50.9,
+   "first_seen": "2026-10-24T18:06:00+00:00",
+   "notified_at": "2026-10-24T18:06:00+00:00"
+  },
+  "falabella:prod18620296": {
+   "price": 89.9,
+   "discount": 50.03,
+   "first_seen": "2026-10-24T18:50:40+00:00",
+   "notified_at": "2026-10-24T18:50:40+00:00"
+  },
+  "falabella:prod4180023": {
+   "price": 79.5,
+   "discount": 50.0,
+   "first_seen": "2026-10-24T19:21:25+00:00",
+   "notified_at": "2026-10-24T19:21:25+00:00"
+  },
+  "falabella:prod4200056": {
+   "price": 59.9,
+   "discount": 70.04,
+   "first_seen": "2026-10-24T18:05:43+00:00",
+   "notified_at": "2026-10-24T18:05:43+00:00"
+  },
+  "falabella:prod9840069": {
+   "price": 1799.0,
+   "discount": 60.01,
+   "first_seen": "2026-10-24T18:05:43+00:00",
+   "notified_at": "2026-10-24T18:05:43+00:00"
+  }
+ }
+}
