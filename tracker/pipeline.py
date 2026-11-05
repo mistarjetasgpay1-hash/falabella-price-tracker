@@ -9,6 +9,7 @@ from dataclasses import dataclass, field
 
 from . import formatter
 from .base import BaseScraper
+from .bomba import BombaForwarder
 from .config import AppConfig
 from .filters import is_official, rejection_reason
 from .models import Offer
@@ -81,6 +82,28 @@ def diversify(candidatos: list[tuple[Offer, str]], n: int) -> list[tuple[Offer, 
     return elegidas
 
 
+def _caption(offer: Offer, razon: str, cfg: AppConfig, state: StateStore) -> str:
+    """Texto de la alerta individual. Se arma ANTES de marcar el historial: el re-aviso por
+    bajada muestra el precio avisado la vez anterior."""
+    return formatter.offer_caption(
+        offer,
+        reason=razon,
+        previous_price=state.previous_price(offer.key),
+        store_name=cfg.store_name,
+        hashtag_prefix=cfg.hashtag_prefix,
+        emoji=cfg.telegram.group_emoji(offer.group),
+    )
+
+
+def _bomba_caption(offer: Offer, razon: str, cfg: AppConfig, state: StateStore) -> str | None:
+    """Alerta con foto para el bot 4 de una oferta que en el canal habitual fue en un resumen."""
+    try:
+        return _caption(offer, razon, cfg, state)
+    except Exception as exc:  # noqa: BLE001 — el canal extra nunca detiene la corrida
+        log.warning("[BOMBA] No se pudo armar la alerta de %s (%s); no se reenvía.", offer.key, type(exc).__name__)
+        return None
+
+
 def notify(
     candidatos: list[tuple[Offer, str]],
     *,
@@ -90,7 +113,13 @@ def notify(
     scraper: BaseScraper,
     report: RunReport,
     max_alerts: int | None = None,
+    bomba: BombaForwarder | None = None,
 ) -> None:
+    """Alertas con foto (alternando grupos) y el resto en resúmenes por grupo. Solo se marca en el
+    historial lo que Telegram aceptó.
+
+    `bomba` (opcional): cada oferta aceptada por el canal habitual con descuento > umbral se
+    reenvía también al bot 4, con foto. Sus fallos no cuentan como fallos del envío normal."""
     tg = cfg.telegram
     limite = tg.max_individual_alerts if max_alerts is None else max_alerts
     individuales = diversify(candidatos, limite)
@@ -98,14 +127,7 @@ def notify(
     resto = [par for par in candidatos if id(par) not in elegidas][: tg.digest_max_items]
 
     for offer, razon in individuales:
-        caption = formatter.offer_caption(
-            offer,
-            reason=razon,
-            previous_price=state.previous_price(offer.key),
-            store_name=cfg.store_name,
-            hashtag_prefix=cfg.hashtag_prefix,
-            emoji=tg.group_emoji(offer.group),
-        )
+        caption = _caption(offer, razon, cfg, state)
         ok = notifier.send_offer(
             caption,
             photo_url=offer.image_url,
@@ -117,6 +139,8 @@ def notify(
             report.sent_individual += 1
             report.sent.append((offer, razon))
             log.info("[OK] -%.1f%% %s (%s)", offer.discount, offer.name[:60], razon)
+            if bomba is not None:
+                bomba.forward(offer, caption, photo_loader=lambda o=offer: scraper.fetch_image(o))
         else:
             report.failed_sends += 1
 
@@ -135,12 +159,18 @@ def notify(
             if not notifier.send_message(texto, thread_id=tg.group_thread(grupo), preview=False):
                 report.failed_sends += 1
                 break
+            # Alertas para el bot 4: se arman antes de marcar el historial (precio anterior en las bajadas).
+            reenvios = [(o, _bomba_caption(o, r, cfg, state)) for o, r in incluidas
+                        if bomba is not None and bomba.wants(o)]
             for offer, razon in incluidas:
                 state.mark_notified(offer.key, offer.price, offer.discount)
                 report.sent.append((offer, razon))
             report.sent_digest += len(incluidas)
             report.digest_messages += 1
             pendientes = pendientes[len(incluidas):]
+            for offer, caption in reenvios:
+                if caption:
+                    bomba.forward(offer, caption, photo_loader=lambda o=offer: scraper.fetch_image(o))
 
     report.deferred = max(0, len(candidatos) - report.sent_individual - report.sent_digest)
 
@@ -164,7 +194,8 @@ def update_health(
         state.set_meta("failure_streak", 0)
 
 
-def write_summary(cfg: AppConfig, report: RunReport, scraper: BaseScraper, duracion: float) -> None:
+def write_summary(cfg: AppConfig, report: RunReport, scraper: BaseScraper, duracion: float, *,
+                  notifier=None, bomba: BombaForwarder | None = None) -> None:
     rechazos = ", ".join(f"{k}: {v}" for k, v in sorted(report.rejected.items())) or "—"
     log.info(
         "Resumen %s | vistos=%s candidatos=%s enviados=%s+%s(resumen) pendientes=%s fallos_envio=%s | "
@@ -174,6 +205,15 @@ def write_summary(cfg: AppConfig, report: RunReport, scraper: BaseScraper, durac
         scraper.stats.mode, duracion,
     )
     log.info("Descartes: %s", rechazos)
+    if notifier is not None and hasattr(notifier, "api_summary"):
+        log.info("[TG] Respuestas de la API de Telegram en esta corrida: %s", notifier.api_summary())
+    bomba_txt = ""
+    if bomba is not None:
+        try:
+            bomba_txt = bomba.summary()
+        except Exception as exc:  # noqa: BLE001
+            bomba_txt = f"sin resumen ({type(exc).__name__})"
+        log.info("[TG4] Bot 4 (ofertas > %s %%) en esta corrida: %s", f"{bomba.threshold:g}", bomba_txt)
 
     destino = os.getenv("GITHUB_STEP_SUMMARY")
     if not destino:
@@ -188,7 +228,8 @@ def write_summary(cfg: AppConfig, report: RunReport, scraper: BaseScraper, durac
         f"| Productos vistos | {report.seen} |\n| Candidatos | {report.candidates} |\n"
         f"| Enviados (foto) | {report.sent_individual} |\n"
         f"| Enviados en resúmenes | {report.sent_digest} ({report.digest_messages} mensajes) |\n"
-        f"| Pendientes p/ próxima corrida | {report.deferred} |\n| Fallos de envío | {report.failed_sends} |\n"
+        + (f"| Bot 4 · ofertas > {bomba.threshold:g} % | {bomba_txt.replace('|', '/')} |\n" if bomba is not None else "")
+        + f"| Pendientes p/ próxima corrida | {report.deferred} |\n| Fallos de envío | {report.failed_sends} |\n"
         f"| Páginas OK / fallidas | {scraper.stats.pages_ok} / {scraper.stats.pages_failed} |\n"
         f"| Modo de extracción | {scraper.stats.mode} |\n| Duración | {duracion:.1f}s |\n\n"
         f"**Descartes:** {rechazos}\n\n"
@@ -199,6 +240,18 @@ def write_summary(cfg: AppConfig, report: RunReport, scraper: BaseScraper, durac
         md += "\n**Errores:**\n" + "\n".join(f"- `{e[:200]}`" for e in scraper.stats.errors[:10]) + "\n"
     with open(destino, "a", encoding="utf-8") as fh:
         fh.write(md)
+
+
+def _build_bomba(cfg: AppConfig, dry_run: bool) -> BombaForwarder | None:
+    """Bot 4 (ofertas bomba). Opcional: cualquier problema al prepararlo deja la corrida igual que antes."""
+    try:
+        bomba = BombaForwarder(cfg, dry_run=dry_run)
+        bomba.log_status()
+        return bomba
+    except Exception as exc:  # noqa: BLE001 — el canal extra nunca detiene la corrida
+        log.warning("[BOMBA] Bot 4 desactivado en esta corrida por un error al prepararlo (%s: %s).",
+                    type(exc).__name__, exc)
+        return None
 
 
 def run(cfg: AppConfig, *, dry_run: bool = False, max_alerts: int | None = None) -> int:
@@ -225,13 +278,14 @@ def run(cfg: AppConfig, *, dry_run: bool = False, max_alerts: int | None = None)
         send_photos=cfg.telegram.send_photos,
         dry_run=dry_run,
     )
+    bomba = _build_bomba(cfg, dry_run)
     scraper = build_scraper(cfg, state.meta.setdefault("scraper", {}))
     report = RunReport()
     codigo = 0
     try:
         candidatos = collect_candidates(scraper, cfg, state, report)
         notify(candidatos, cfg=cfg, state=state, notifier=notifier, scraper=scraper,
-               report=report, max_alerts=max_alerts)
+               report=report, max_alerts=max_alerts, bomba=bomba)
         update_health(scraper, cfg, state, notifier)
         if report.failed_sends and not report.sent:
             # Token/chat inválido o Telegram caído: se marca el job en rojo para que GitHub avise.
@@ -239,11 +293,13 @@ def run(cfg: AppConfig, *, dry_run: bool = False, max_alerts: int | None = None)
             codigo = 1
     finally:
         scraper.close()
+        if bomba is not None:
+            bomba.close()
         if scraper.meta_changed:
             state.dirty = True
         if dry_run:
             log.info("[DRY-RUN] No se guarda el historial.")
         elif state.save():
             log.info("Historial guardado en %s (%s entradas).", state.path, len(state.entries))
-        write_summary(cfg, report, scraper, time.monotonic() - inicio)
+        write_summary(cfg, report, scraper, time.monotonic() - inicio, notifier=notifier, bomba=bomba)
     return codigo
