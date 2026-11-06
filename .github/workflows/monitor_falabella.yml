@@ -51,6 +51,8 @@ jobs:
         env:
           TELEGRAM_TOKEN2: ${{ secrets.TELEGRAM_TOKEN2 }}
           CHAT_ID2: ${{ secrets.CHAT_ID2 }}
+          TELEGRAM_TOKEN4: ${{ secrets.TELEGRAM_TOKEN4 }}    # bot 4: ofertas bomba > 69 % (opcional)
+          CHAT_ID4: ${{ secrets.CHAT_ID4 }}
           DRY_RUN: ${{ inputs.dry_run }}
         # xvfb solo se usa si la tienda bloquea HTTP y se activa el Chrome de respaldo.
         run: xvfb-run -a python -m tracker --config config.yaml

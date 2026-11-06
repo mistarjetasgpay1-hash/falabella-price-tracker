@@ -37,6 +37,21 @@ class TelegramConfig:
 
 
 @dataclass
+class BombaConfig:
+    """Canal extra de ofertas "bomba" (bot 4): las alertas con descuento estrictamente mayor que
+    `discount_gt` se reenvían también a este bot/chat, además del envío normal. Es opcional: si
+    las variables están vacías, el monitor sigue igual y no reenvía nada."""
+
+    enabled: bool = True
+    token_env: str = "TELEGRAM_TOKEN4"
+    chat_id_env: str = "CHAT_ID4"
+    discount_gt: float = 69.0          # % entero del mensaje > 69 → desde "-70%"
+    # Resueltos desde el entorno (no van en el YAML):
+    token: str = ""
+    chat_id: str = ""
+
+
+@dataclass
 class OffersConfig:
     min_discount_pct: float = 49.5
     min_price: float = 1.0
@@ -71,6 +86,7 @@ class AppConfig:
     http: HttpConfig
     scraper: dict[str, Any]
     base_dir: Path = Path(".")
+    bomba: BombaConfig = field(default_factory=BombaConfig)
 
     def resolve(self, relative: str | None) -> Path | None:
         if not relative:
@@ -115,6 +131,7 @@ def load_config(path: str | Path, *, require_secrets: bool = True) -> AppConfig:
         http=_build(HttpConfig, raw.get("http"), "http"),
         scraper=raw["scraper"],
         base_dir=ruta.resolve().parent,
+        bomba=_build(BombaConfig, raw.get("bomba"), "bomba"),
     )
 
     if cfg.http.delay_min_s > cfg.http.delay_max_s:
@@ -124,6 +141,9 @@ def load_config(path: str | Path, *, require_secrets: bool = True) -> AppConfig:
 
     cfg.telegram.token = os.getenv(cfg.telegram.token_env, "").strip()
     cfg.telegram.chat_id = os.getenv(cfg.telegram.chat_id_env, "").strip()
+    # Bot 4 (ofertas bomba): opcional, nunca bloquea la carga si falta.
+    cfg.bomba.token = os.getenv(cfg.bomba.token_env, "").strip()
+    cfg.bomba.chat_id = os.getenv(cfg.bomba.chat_id_env, "").strip()
     if require_secrets and not (cfg.telegram.token and cfg.telegram.chat_id):
         raise ConfigError(
             f"Faltan los secretos {cfg.telegram.token_env} y/o {cfg.telegram.chat_id_env} "

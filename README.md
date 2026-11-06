@@ -35,6 +35,7 @@ Fuentes: tecnología, celulares, electrohogar, moda (mujer, hombre, infantil), z
 │   ├── filters.py       # tienda oficial, stock, umbral, palabras excluidas
 │   ├── state.py         # historial con TTL + regla de bajada de precio
 │   ├── telegram.py      # envío con throttle y manejo de 429
+│   ├── bomba.py         # bot 4: reenvía también las alertas > 69 %
 │   ├── formatter.py     # plantillas HTML de los mensajes
 │   └── pipeline.py      # orquestador + resumen de la corrida
 └── tests/               # pytest (sin red)
@@ -60,6 +61,15 @@ El TTL es por producto, así que no hay una avalancha de re-avisos el mismo día
 - Por corrida: `max_individual_alerts` alertas con foto (repartidas entre categorías) y el resto, hasta `digest_max_items`, en **resúmenes por categoría** de hasta 30 ofertas cada uno. Lo que no entra se envía en la siguiente corrida.
 - **Temas (opcional):** si conviertes el chat en un grupo con Temas, pon el `thread_id` de cada tema en `telegram.groups` y las alertas se separan solas.
 - Si 3 corridas seguidas no obtienen datos (bloqueo o cambio de la web), llega un aviso ⚠️ silencioso.
+
+### Bot 4 · ofertas bomba (opcional)
+
+- Secrets: `TELEGRAM_TOKEN4` y `CHAT_ID4` (el mismo bot que usa Plaza Vea para sus ofertas bomba).
+- El envío normal no cambia: cuando el canal habitual **acepta** una alerta con descuento > 69 %, se reenvía la misma alerta, con foto, al bot 4 (también las que en el canal habitual van dentro de un resumen).
+- El umbral se compara con el % que muestra el mensaje: un "-69%" no entra, un "-70%" sí. Se cambia en `config.yaml` → `bomba.discount_gt`.
+- Sin spam: usa el mismo historial (TTL de 3 días + re-aviso si baja ≥3 %), así que la misma oferta no se repite.
+- Si los Secrets faltan o Telegram los rechaza, el monitor sigue normal y la corrida no se marca en rojo.
+- En el log: `[BOMBA] ✓ Reenviada al bot 4…` o `[BOMBA] ✗ El bot 4 no aceptó… (HTTP 403: …)`, cada respuesta HTTP como `[TG4] ← sendPhoto · HTTP 200…` y el total en `[TG4] Bot 4 (ofertas > 69 %) en esta corrida: …`.
 
 ## Uso
 
